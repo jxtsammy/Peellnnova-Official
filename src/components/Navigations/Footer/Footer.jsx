@@ -49,7 +49,7 @@ const Footer = () => {
       <div className="footer-bottom-green">
         <div className="footer-banner-wrapper">
           <div className="footer-banner">
-            <h2>Top model for agriculture<br />Ready, Steady, Go</h2>
+            <h2>Turning agricultural waste<br />in to healthier homes</h2>
             <form className="banner-form" onSubmit={(e) => e.preventDefault()}>
               <div className="input-group">
                 <i className="fa-regular fa-envelope"></i>
