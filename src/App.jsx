@@ -12,6 +12,11 @@ import TheSolution from './components/Home/TheSolution/TheSolution'
 import InsightsVideo from './components/Home/InsightsVideo/InsightsVideo'
 import ProductsPreview from './components/Home/ProdutsPreview/ProductPreview'
 
+//About Page
+import AboutHeader from './components/AboutUs/AboutHeader/AboutHeader'
+import CompanyInfo from './components/AboutUs/AboutCompany/CompanyInfo'
+import ValueProposition from './components/AboutUs/ValueProposition/ValueProposition'
+
 function App() {
   return (
     <Router>
@@ -30,6 +35,18 @@ function App() {
               <TheSolution />
               <InsightsVideo />
               <ProductsPreview />
+            </main>
+          }
+        />
+
+        {/*The About Page*/}
+        <Route
+          path="/about"
+          element={
+            <main>
+              <AboutHeader />
+              <CompanyInfo />
+              <ValueProposition />
             </main>
           }
         />

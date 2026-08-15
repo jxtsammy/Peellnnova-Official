@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './NavBar.css';
 
 // Import your light and dark logo images from assets
-import logoDark from '../../../assets/Peellnnova logo.png';   // Logo used on light header
-import logoLight from '../../../assets/PeellnnovaLogoWhite.png'; // Logo used on dark green header
+import logoDark from '../../../assets/Peellnnova logo.png';
+import logoLight from '../../../assets/PeellnnovaLogoWhite.png';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,6 +55,7 @@ const Navbar = () => {
         <Link to="/" className="navbar-logo" onClick={handleNavClick}>
         <div className="logo-img-wrapper">
             <AnimatePresence mode="wait">
+              {/* Always display logoDark if viewport is mobile width or not scrolled */}
               {(!isScrolled || window.innerWidth <= 820) ? (
                 <motion.img
                   key="logo-dark"
