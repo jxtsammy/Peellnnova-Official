@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import './ProcessAndStandards.css';
+import img from '../../../assets/maa.jpg';
 
 const processPoints = [
   {
@@ -33,7 +34,7 @@ const ProcessSection = () => {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=1200&q=80"
+            src={img}
             alt="Agricultural Innovation and Testing"
             className="process-img"
           />
