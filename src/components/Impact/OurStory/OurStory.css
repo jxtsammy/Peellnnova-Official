@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+.story-accordion-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 60px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #111111;
+  box-sizing: border-box;
+}
+
+.story-accordion-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.story-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  width: 100%;
+}
+
+.story-accordion-pill {
+  display: inline-block;
+  background-color: #a3e635;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 10px 18px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.story-accordion-main-title {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.story-accordion-main-title span {
+  color: #a3e635;
+  font-weight: 600;
+}
+
+.story-accordion-meta {
+  max-width: 380px;
+}
+
+.story-accordion-subtitle {
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.story-accordion-flex {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  min-height: 400px;
+  align-items: stretch;
+}
+
+.story-accordion-card {
+  flex: 1;
+  background-color: #0b3d26;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: flex 0.6s cubic-bezier(0.25, 1, 0.3, 1),
+              background-color 0.5s ease,
+              color 0.5s ease,
+              transform 0.4s ease,
+              box-shadow 0.5s ease;
+}
+
+.story-card-full-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(11, 61, 38, 0.08) 0, rgba(11, 61, 38, 0.08) 1px, transparent 0, transparent 20px),
+    repeating-linear-gradient(-45deg, rgba(11, 61, 38, 0.08) 0, rgba(11, 61, 38, 0.08) 1px, transparent 0, transparent 20px);
+}
+
+.story-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.story-card-number {
+  font-size: clamp(3rem, 4vw, 4.5rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 0.9;
+  letter-spacing: -2px;
+  transition: color 0.5s ease;
+}
+
+.story-card-year {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #a3e635;
+  margin-bottom: 8px;
+  transition: color 0.5s ease;
+}
+
+.story-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0;
+  letter-spacing: -0.3px;
+  color: #ffffff;
+  transition: color 0.5s ease;
+}
+
+.story-card-desc {
+  max-height: 0;
+  opacity: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #0b3d26;
+  margin-top: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin-top 0.5s ease;
+}
+
+.story-accordion-card.is-active {
+  flex: 2.8;
+  background-color: #a3e635;
+  color: #0b3d26;
+  transform: translateY(-8px);
+  box-shadow: 0 25px 45px rgba(11, 61, 38, 0.18);
+}
+
+.story-accordion-card.is-active .story-card-full-grid {
+  opacity: 1;
+}
+
+.story-accordion-card.is-active .story-card-number {
+  color: rgba(11, 61, 38, 0.25);
+}
+
+.story-accordion-card.is-active .story-card-year {
+  color: #0b3d26;
+}
+
+.story-accordion-card.is-active .story-card-title {
+  color: #0b3d26;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.story-accordion-card.is-active .story-card-desc {
+  max-height: 150px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  .story-accordion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .story-accordion-flex {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .story-accordion-card {
+    flex: none !important;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .story-accordion-card.is-active {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-accordion-section {
+    padding: 60px 20px;
+  }
+
+  .story-accordion-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}

@@ -21,6 +21,8 @@ import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/Proces
 
 //Impact Page
 import ImpactHeader from './components/Impact/ImpactHeader/ImpactHeader'
+import OurVision from './components/Impact/OurVision/OurVision'
+import OurStory from './components/Impact/OurStory/OurStory'
 import ImpactMetrics from './components/Impact/ImpactMetrics/ImpactMetrics'
 
 function App() {
@@ -65,6 +67,8 @@ function App() {
           element={
             <main>
               <ImpactHeader />
+              <OurVision />
+              <OurStory />
               <ImpactMetrics />
             </main>
           }

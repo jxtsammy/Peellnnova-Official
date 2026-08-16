@@ -3,9 +3,10 @@
 .impact-numbers-section {
   width: 100%;
   padding: 100px 100px;
-  background-color: #ffffff;
+  background-color: #f6f6f2;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  clip-path: polygon(0 45px, 100% 0, 100% 100%, 0 100%);
 }
 
 .impact-numbers-container {
@@ -132,6 +133,10 @@
 
 /* Tablet Responsive View */
 @media (max-width: 1024px) {
+  .impact-numbers-section{
+    clip-path: none;
+  }
+
   .impact-numbers-section {
     padding: 60px 40px;
   }

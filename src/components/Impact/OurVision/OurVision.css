@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.vision-section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 100px 40px 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #111111;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.vision-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.vision-image-wrapper {
+  width: 100%;
+  height: 520px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.vision-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vision-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3;
+}
+
+.vision-headline {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #000000;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.vision-body {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555555;
+  margin-bottom: 32px;
+  max-width: 500px;
+}
+
+.vision-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #a3e635;
+  color: #0b3d26;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 100px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  margin-bottom: 32px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.vision-pill-btn:hover {
+  transform: translateY(-2px);
+  background-color: #8ed622;
+}
+
+.vision-closing {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: #0b3d26;
+  border-left: 3px solid #a3e635;
+  padding-left: 16px;
+  max-width: 450px;
+}
+
+/* Watermark with overflow enabled */
+.vision-bg-watermark {
+  position: absolute;
+  right: 0px;
+  bottom: -60px;
+  font-size: clamp(10rem, 20vw, 15rem);
+  font-weight: 900;
+  color: #a3e635;
+  opacity: 1;
+  line-height: 0.75;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  letter-spacing: -8px;
+}
+
+@media (max-width: 992px) {
+  .vision-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .vision-image-wrapper {
+    height: 380px;
+  }
+
+  .vision-bg-watermark {
+    font-size: 12rem;
+    right: -40px;
+    bottom: -30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .vision-section {
+    padding: 60px 20px 0 20px;
+  }
+
+  .vision-image-wrapper {
+    height: 280px;
+  }
+
+  .vision-bg-watermark {
+    font-size: 8rem;
+    right: -20px;
+    bottom: -15px;
+  }
+}
