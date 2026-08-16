@@ -19,6 +19,10 @@ import ValueProposition from './components/AboutUs/ValueProposition/ValueProposi
 import OurTeam from './components/AboutUs/OurTeam/OurTeam'
 import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/ProcessAndStandards'
 
+//Impact Page
+import ImpactHeader from './components/Impact/ImpactHeader/ImpactHeader'
+import ImpactMetrics from './components/Impact/ImpactMetrics/ImpactMetrics'
+
 function App() {
   return (
     <Router>
@@ -51,6 +55,17 @@ function App() {
               <ValueProposition />
               <ProcessAndStandards />
               <OurTeam />
+            </main>
+          }
+        />
+
+        {/*The Impact Page*/}
+        <Route
+          path="/impact"
+          element={
+            <main>
+              <ImpactHeader />
+              <ImpactMetrics />
             </main>
           }
         />

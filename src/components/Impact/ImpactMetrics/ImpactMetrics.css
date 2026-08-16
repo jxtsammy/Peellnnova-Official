@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+.impact-numbers-section {
+  width: 100%;
+  padding: 100px 100px;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+.impact-numbers-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: #0b3d26; /* Dark Green Color */
+  border-radius: 36px;
+  padding: 30px 48px;
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(11, 61, 38, 0.2);
+}
+
+/* Subtle Overlay Grid Lines */
+.impact-numbers-grid-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+}
+
+/* Decorative Lime Stars */
+.impact-numbers-star {
+  position: absolute;
+  color: #ccf535;
+  font-size: 48px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.star-left {
+  top: 40px;
+  left: 48px;
+}
+
+.star-right {
+  top: 40px;
+  right: 48px;
+}
+
+/* Header Content */
+.impact-numbers-header {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impact-numbers-pill {
+  display: inline-block;
+  background-color: #ccf535;
+  color: #0b3d26;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 22px;
+  border-radius: 100px;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.impact-numbers-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+/* 6 Metrics Grid */
+.impact-numbers-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+  text-align: center;
+}
+
+.impact-metric-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+.impact-metric-number {
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin: 0 0 10px 0;
+}
+
+.impact-metric-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ccf535;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.3px;
+}
+
+.impact-metric-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 240px;
+}
+
+/* Responsive View */
+@media (max-width: 1024px) {
+  .impact-numbers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .impact-numbers-container {
+    padding: 50px 20px;
+    border-radius: 24px;
+  }
+
+  .star-left, .star-right {
+    font-size: 32px;
+    top: 24px;
+  }
+
+  .star-left { left: 20px; }
+  .star-right { right: 20px; }
+
+  .impact-numbers-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
