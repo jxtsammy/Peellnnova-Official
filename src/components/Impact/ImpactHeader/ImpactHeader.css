@@ -7,6 +7,7 @@
   font-family: 'Poppins', sans-serif;
   color: #000000;
   box-sizing: border-box;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 93%);
 }
 
 .impact-header-container {
@@ -79,6 +80,10 @@
 
 /* Responsive Handling */
 @media (max-width: 1024px) {
+  .impact-header-section{
+    clip-path: none;
+  }
+
   .impact-header-top-row {
     flex-direction: column;
     align-items: flex-start;

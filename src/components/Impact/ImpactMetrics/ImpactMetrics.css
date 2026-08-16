@@ -13,7 +13,7 @@
   margin: 0 auto;
   background-color: #0b3d26; /* Dark Green Color */
   border-radius: 36px;
-  padding: 30px 48px;
+  padding: 60px 48px;
   position: relative;
   overflow: hidden;
   color: #ffffff;
@@ -79,7 +79,7 @@
 }
 
 .impact-numbers-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
   font-weight: 700;
   color: #ffffff;
   line-height: 1.15;
@@ -105,7 +105,7 @@
 }
 
 .impact-metric-number {
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
   font-weight: 500;
   color: #ffffff;
   line-height: 1;
@@ -130,30 +130,84 @@
   max-width: 240px;
 }
 
-/* Responsive View */
+/* Tablet Responsive View */
 @media (max-width: 1024px) {
+  .impact-numbers-section {
+    padding: 60px 40px;
+  }
+
   .impact-numbers-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 36px 24px;
   }
 }
 
-@media (max-width: 640px) {
+/* Mobile Responsive View */
+@media (max-width: 768px) {
+  .impact-numbers-section {
+    padding: 32px 16px;
+  }
+
   .impact-numbers-container {
-    padding: 50px 20px;
-    border-radius: 24px;
+    padding: 48px 20px 40px 20px;
+    border-radius: 28px;
   }
 
-  .star-left, .star-right {
-    font-size: 32px;
-    top: 24px;
+  .impact-numbers-grid-bg {
+    background-size: 50px 50px;
   }
 
-  .star-left { left: 20px; }
-  .star-right { right: 20px; }
+  .impact-numbers-star {
+    font-size: 28px;
+  }
+
+  .star-left {
+    top: 20px;
+    left: 20px;
+  }
+
+  .star-right {
+    top: 20px;
+    right: 20px;
+  }
+
+  .impact-numbers-header {
+    margin-bottom: 36px;
+    padding: 0 10px;
+  }
+
+  .impact-numbers-pill {
+    font-size: 11px;
+    padding: 6px 16px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .impact-numbers-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
 
   .impact-numbers-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
+  }
+
+  .impact-metric-card {
+    padding: 8px 0;
+  }
+
+  .impact-metric-number {
+    font-size: 3rem;
+    margin-bottom: 6px;
+  }
+
+  .impact-metric-label {
+    font-size: 15px;
+  }
+
+  .impact-metric-desc {
+    font-size: 12px;
+    max-width: 280px;
   }
 }
