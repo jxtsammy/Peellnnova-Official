@@ -136,7 +136,7 @@
 
   .vision-bg-watermark {
     font-size: 8rem;
-    right: -20px;
+    right: 0px;
     bottom: -15px;
   }
 }
