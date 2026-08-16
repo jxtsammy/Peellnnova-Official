@@ -120,7 +120,7 @@
 
   .vision-bg-watermark {
     font-size: 12rem;
-    right: -40px;
+    right: 0px;
     bottom: -30px;
   }
 }
