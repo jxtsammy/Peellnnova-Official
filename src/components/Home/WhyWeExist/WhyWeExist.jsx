@@ -72,7 +72,7 @@ const WhyWeExist = () => {
             <i className="fa-solid fa-circle-info"></i>
             <span>Why We Exist</span>
           </div>
-          <h2 className="card-title">
+          <h2 className="exist-card-title">
             Africa has problems that <br />
             deserve African Solutions.
           </h2>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.process-section {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  color: #111111;
+}
+
+.process-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Image Container */
+.process-image-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border-radius: 36px;
+  overflow: hidden;
+}
+
+.process-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Content Column */
+.process-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Top Badge Pill */
+.process-pill {
+  display: inline-block;
+  padding: 6px 18px;
+  border-radius: 100px;
+  border: 1px solid #111111;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Section Title */
+.process-title {
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 600;
+  color: #000000;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 16px 0;
+}
+
+/* Lead Paragraph Above Points */
+.process-lead {
+  font-size: 14px;
+  color: #52525b;
+  line-height: 1.65;
+  margin: 0 0 36px 0;
+  max-width: 580px;
+}
+
+/* 3 Main Points Grid */
+.process-points-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.process-point-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Green Circular Icon Badges */
+.point-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ccf535;
+  color: #0b3d26;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.point-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* Closing Line Footer Box */
+.process-closing {
+  width: 100%;
+  padding-top: 15px;
+}
+
+.closing-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0b3d26;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+/* Responsive View */
+@media (max-width: 1024px) {
+  .process-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .process-image-wrapper {
+    min-height: 360px;
+  }
+
+  .process-points-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

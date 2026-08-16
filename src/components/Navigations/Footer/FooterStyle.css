@@ -128,11 +128,10 @@
 .footer-logo {
   display: flex;
   align-items: center;
-  margin-bottom: 16px;
 }
 
 .logo-img {
-  height: 42px;
+  height: 100px;
   width: auto;
   object-fit: contain;
 }

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import './FooterStyle.css';
+import logo from '../../../assets/PeellnnovaLogoWhite.png'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -65,7 +66,7 @@ const Footer = () => {
             <div className="footer-col brand-col">
               <div className="footer-logo">
                 <img
-                  src="/path-to-your-logo.png"
+                  src={logo}
                   alt="Peellnnova Logo"
                   className="logo-img"
                 />

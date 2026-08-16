@@ -16,6 +16,8 @@ import ProductsPreview from './components/Home/ProdutsPreview/ProductPreview'
 import AboutHeader from './components/AboutUs/AboutHeader/AboutHeader'
 import CompanyInfo from './components/AboutUs/AboutCompany/CompanyInfo'
 import ValueProposition from './components/AboutUs/ValueProposition/ValueProposition'
+import OurTeam from './components/AboutUs/OurTeam/OurTeam'
+import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/ProcessAndStandards'
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
               <AboutHeader />
               <CompanyInfo />
               <ValueProposition />
+              <ProcessAndStandards />
+              <OurTeam />
             </main>
           }
         />
