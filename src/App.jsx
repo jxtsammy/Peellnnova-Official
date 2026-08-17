@@ -25,6 +25,11 @@ import OurVision from './components/Impact/OurVision/OurVision'
 import OurStory from './components/Impact/OurStory/OurStory'
 import ImpactMetrics from './components/Impact/ImpactMetrics/ImpactMetrics'
 
+//Products Page
+import ProductHeader from './components/OurProducts/ProductsHeader/ProductHeader'
+import ProductsInfo from './components/OurProducts/ProductsInfo/ProductsInfo'
+import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSummary'
+
 function App() {
   return (
     <Router>
@@ -70,6 +75,18 @@ function App() {
               <OurVision />
               <OurStory />
               <ImpactMetrics />
+            </main>
+          }
+        />
+
+        {/*The Products Page*/}
+        <Route
+        path="/products"
+        element={
+            <main>
+              <ProductHeader />
+              <ProductsInfo />
+              <ProductsSummary />
             </main>
           }
         />

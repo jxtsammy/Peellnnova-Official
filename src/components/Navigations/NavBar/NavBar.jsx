@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './NavBar.css';
@@ -10,19 +10,33 @@ import logoLight from '../../../assets/PeellnnovaLogoWhite.png';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const location = useLocation();
 
-  // Scroll detection to trigger background and logo change
+  // Scroll detection for background change and hide/show on scroll direction
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      const currentScrollY = window.scrollY;
+
+      // Background threshold
+      if (currentScrollY > 40) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+      // Hide on scroll down, show on scroll up (with a small buffer)
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -46,16 +60,15 @@ const Navbar = () => {
   return (
     <motion.header
       className={`navbar-container ${isScrolled ? 'scrolled-dark' : ''}`}
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      initial={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : '-100%' }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <nav className="navbar">
         {/* Brand Logo with Cross-Fade Transition */}
         <Link to="/" className="navbar-logo" onClick={handleNavClick}>
-        <div className="logo-img-wrapper">
+          <div className="logo-img-wrapper">
             <AnimatePresence mode="wait">
-              {/* Always display logoDark if viewport is mobile width or not scrolled */}
               {(!isScrolled || window.innerWidth <= 820) ? (
                 <motion.img
                   key="logo-dark"

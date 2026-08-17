@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.product-summary-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 60px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f6f6f2;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.product-summary-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.summary-media-side {
+  width: 100%;
+  height: 450px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.summary-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.summary-content-side {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.summary-header-sub {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.summary-header-title {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.summary-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.summary-feature-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.summary-icon-box {
+  width: 44px;
+  height: 44px;
+  background-color: #111111;
+  color: #a3e635;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.summary-feature-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.summary-feature-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .product-summary-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .summary-media-side {
+    height: 380px;
+  }
+
+  .summary-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .summary-features-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
