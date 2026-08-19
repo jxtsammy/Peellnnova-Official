@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  padding: 60px 60px;
+  background-color: #a3e635; /* Requested background color */
+  font-family: 'Poppins', sans-serif;
+  color: #111111;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Large Diagonal Grid Pattern with Vertical Fade Mask */
+.diagonal-grid-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px);
+  background-size: 80px 80px;
+  /* Fades out smoothly so the top is less visible and increases toward the bottom */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* Left Column Styling */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-tag {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1a2e05;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.contact-main-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin: 0 0 24px 0;
+  color: #111111;
+}
+
+.contact-desc {
+  font-size: 0.95rem;
+  color: #1f2937;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 480px;
+}
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.info-box h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 8px 0;
+  text-transform: capitalize;
+}
+
+.info-box p, .info-box a {
+  font-size: 0.9rem;
+  color: #1f2937;
+  margin: 0 0 4px 0;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.info-box a.email-link:hover {
+  color: #111111;
+}
+
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.social-icons a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #1a2e05;
+}
+
+/* Right Column: Form Card Styling */
+.contact-right {
+  width: 100%;
+}
+
+.form-card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.form-subtitle {
+  font-size: 0.88rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0 0 32px 0;
+}
+
+.styled-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 14px 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #d1d5db;
+  color: #111111;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+  border-color: #3f6212;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Submit Button styled with Dark Green Theme */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #3f6212;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: flex-start;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1a2e05;
+  transform: translateY(-1px);
+}
+
+.btn-arrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .contact-left {
+    max-width: 100%;
+  }
+
+  .form-card {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -30,6 +30,9 @@ import ProductHeader from './components/OurProducts/ProductsHeader/ProductHeader
 import ProductsInfo from './components/OurProducts/ProductsInfo/ProductsInfo'
 import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSummary'
 
+//Contact Page
+import ContactIntro from './components/ContactUs/ContactIntro/ContactIntro'
+
 function App() {
   return (
     <Router>
@@ -87,6 +90,16 @@ function App() {
               <ProductHeader />
               <ProductsInfo />
               <ProductsSummary />
+            </main>
+          }
+        />
+
+        {/*The Contact Us Page*/}
+        <Route
+        path="/contact"
+        element={
+            <main>
+              <ContactIntro />
             </main>
           }
         />

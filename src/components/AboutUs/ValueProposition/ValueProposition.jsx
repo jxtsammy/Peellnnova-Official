@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
 import './ValueProposition.css';
+import circular from '../../../assets/circular.jpg';
+import science from '../../../assets/lab.jpg';
+import innovation from '../../../assets/innovation.jpg'
 
 const ValueProposition = () => {
   const cards = [
@@ -7,21 +10,21 @@ const ValueProposition = () => {
       id: 1,
       title: 'Circular Products',
       description: 'We seek to transform underutilized agricultural resources into valuable products.',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+      image: circular,
       isDark: false,
     },
     {
       id: 2,
       title: 'Science & Formulation',
       description: 'We combine formulation knowledge, research and product development.',
-      image: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+      image: science,
       isDark: true, // Black highlighted card in middle
     },
     {
       id: 3,
       title: 'African Innovation',
       description: 'We develop solutions inspired by the realities, resources and needs of African communities.',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
+      image: innovation,
       isDark: false,
     },
   ];

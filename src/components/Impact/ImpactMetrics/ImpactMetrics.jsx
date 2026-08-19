@@ -1,38 +1,80 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import './ImpactMetrics.css';
 
 const impactMetrics = [
   {
-    number: '2,000+',
+    targetNumber: 2000,
+    suffix: '+',
     label: 'Products Distributed',
     description: 'High-value health and wellness formulations delivered to households and health partners'
   },
   {
-    number: '175+',
+    targetNumber: 175,
+    suffix: '+',
     label: 'Farmers Reached',
     description: 'Local agricultural partners empowered through organic waste upcycling initiatives.'
   },
   {
-    number: '60+',
+    targetNumber: 60,
+    suffix: '+',
     label: 'Jobs Created',
     description: 'Direct, sustainable employment opportunities generated across processing and distribution networks.'
   },
   {
-    number: '45+',
+    targetNumber: 45,
+    suffix: '+',
     label: 'Farmers Trained',
     description: 'Agricultural workers upskilled in sustainable sourcing and sustainable waste recovery practices.'
   },
   {
-    number: '1,500+',
+    targetNumber: 1500,
+    suffix: '+',
     label: 'Community Members Impacted',
     description: 'Individuals benefiting directly from improved health access and local economic growth.'
   },
   {
-    number: '15,000+',
+    targetNumber: 15000,
+    suffix: '+',
     label: 'People Reached',
     description: 'Broad public engagement achieved through wellness awareness, health programs, and outreach.'
   }
 ];
+
+const Counter = ({ target, suffix }) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    let start = 0;
+    const duration = 1500; // Animation duration in milliseconds
+    const incrementTime = 15; // Speed of step updates
+    const totalSteps = duration / incrementTime;
+    const incrementAmount = (target - start) / totalSteps;
+
+    let current = start;
+    const timer = setInterval(() => {
+      current += incrementAmount;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, incrementTime);
+
+    return () => clearInterval(timer);
+  }, [isInView, target]);
+
+  return (
+    <span ref={ref}>
+      {count.toLocaleString()}{suffix}
+    </span>
+  );
+};
 
 const ImpactNumbers = () => {
   // Animation Variants
@@ -102,7 +144,9 @@ const ImpactNumbers = () => {
         <motion.div className="impact-numbers-grid" variants={containerVariants}>
           {impactMetrics.map((metric, index) => (
             <motion.div key={index} className="impact-metric-card" variants={cardVariants}>
-              <h3 className="impact-metric-number">{metric.number}</h3>
+              <h3 className="impact-metric-number">
+                <Counter target={metric.targetNumber} suffix={metric.suffix} />
+              </h3>
               <p className="impact-metric-label">{metric.label}</p>
               <p className="impact-metric-desc">{metric.description}</p>
             </motion.div>
