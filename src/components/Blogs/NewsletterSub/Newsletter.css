@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.peellnnova-newsletter-section {
+  position: relative;
+  padding: 130px 20px;
+  background-image: url('../../../assets/pinaFarm.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark linear gradient overlay for image readability */
+.peellnnova-newsletter-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient( rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: 1;
+}
+
+.peellnnova-newsletter-container {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newsletter-title {
+  font-size: clamp(2rem, 5.4vw, 7rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 36px;
+}
+
+.newsletter-form-wrapper {
+  width: 100%;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #ffffff;
+  outline: none;
+}
+
+.newsletter-input::placeholder {
+  color: #d1d5db;
+}
+
+/* Light green accent button matching your theme */
+.newsletter-btn {
+  background-color: #a3e635;
+  color: #111827;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+  background-color: #b4f74d;
+  transform: translateY(-1px);
+}
+
+.newsletter-success-msg {
+  color: #a3e635;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-disclaimer {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  margin: 0;
+  font-weight: 400;
+}
+
+.privacy-link {
+  color: #ffffff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.privacy-link:hover {
+  color: #a3e635;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .peellnnova-newsletter-section {
+    padding: 80px 16px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    border: none;
+    gap: 14px;
+  }
+
+  .newsletter-input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+    padding: 14px;
+  }
+}

@@ -1,9 +1,14 @@
 import { motion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
 import './ExistStyle.css';
 import bgImage from '../../../assets/exist.png';
 import farmer from '../../../assets/farmer.jpg';
 
+const MotionLink = motion(Link);
+
 const WhyWeExist = () => {
+  const navigate = useNavigate();
+
   const highlights = [
     {
       icon: 'fa-solid fa-recycle',
@@ -22,7 +27,6 @@ const WhyWeExist = () => {
     }
   ];
 
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,9 +56,21 @@ const WhyWeExist = () => {
     }
   };
 
+  const handleTeamClick = (e) => {
+    e.preventDefault();
+    navigate('/about');
+    setTimeout(() => {
+      const element = document.getElementById('team-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
   return (
     <section
       className="why-exist-section"
+      id="why-exist-section"
       style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="why-exist-overlay"></div>
@@ -66,7 +82,6 @@ const WhyWeExist = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={containerVariants}
       >
-        {/* Left Card */}
         <motion.div className="why-exist-card" variants={leftCardVariants}>
           <div className="card-badge">
             <i className="fa-solid fa-circle-info"></i>
@@ -88,9 +103,7 @@ const WhyWeExist = () => {
           </div>
         </motion.div>
 
-        {/* Right Content */}
         <div className="why-exist-content">
-          {/* 3 Highlight Statements with Stagger */}
           <div className="content-highlights">
             {highlights.map((item, index) => (
               <motion.div
@@ -119,8 +132,10 @@ const WhyWeExist = () => {
           </motion.p>
 
           <motion.div className="action-group" variants={itemFadeUp}>
-            <motion.button
+            <MotionLink
+              to="/about"
               className="btn-learn-more"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -128,10 +143,12 @@ const WhyWeExist = () => {
               <span className="icon-circle">
                 <i className="fa-solid fa-arrow-right"></i>
               </span>
-            </motion.button>
+            </MotionLink>
+
             <motion.a
-              href="#team"
+              href="/about#team-section"
               className="link-team"
+              onClick={handleTeamClick}
               whileHover={{ x: 4 }}
             >
               <span>Our Team</span>

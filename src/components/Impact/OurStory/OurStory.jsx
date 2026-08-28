@@ -77,7 +77,7 @@ const OurStory = () => {
   };
 
   return (
-    <section className="story-accordion-section">
+    <section className="story-accordion-section" id='story-accordion-section'>
       <motion.div
         className="story-accordion-container"
         variants={containerVariants}

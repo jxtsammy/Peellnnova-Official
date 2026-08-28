@@ -113,10 +113,6 @@ const Navbar = () => {
 
         {/* Action Items */}
         <div className="navbar-actions">
-          <div className="search-box desktop-only">
-            <i className="fa-solid fa-magnifying-glass search-icon"></i>
-            <input type="text" placeholder="Search..." />
-          </div>
 
           <Link to="/contact" className="account-btn desktop-only" onClick={handleNavClick}>
             Contact Us
@@ -142,10 +138,6 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
-            <div className="mobile-search">
-              <i className="fa-solid fa-magnifying-glass search-icon"></i>
-              <input type="text" placeholder="Search..." />
-            </div>
             <ul className="mobile-nav-links">
               {navLinks.map((link) => (
                 <li key={link.path}>

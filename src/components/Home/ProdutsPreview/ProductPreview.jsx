@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Preview.css';
 
 const ProductPreview = () => {
+  const navigate = useNavigate();
+
   const products = [
     {
       id: 1,
@@ -44,6 +46,21 @@ const ProductPreview = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleProductClick = (e) => {
+    e.preventDefault();
+    navigate('/products');
+    setTimeout(() => {
+      const element = document.getElementById('product-accordion-section');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 250);
+  };
+
   return (
     <section className="product-preview-section">
       <div className="product-preview-container">
@@ -61,7 +78,7 @@ const ProductPreview = () => {
           </div>
 
           <div className="product-preview-header-right">
-            <Link to="/products" className="product-preview-btn-top">
+            <Link to="/products" className="product-preview-btn-top" onClick={scrollToTop}>
               <span>View All Products</span>
               <i className="fa-solid fa-arrow-right"></i>
             </Link>
@@ -93,10 +110,10 @@ const ProductPreview = () => {
                   <div className="product-preview-card-content">
                     <h3 className="product-preview-card-title">{product.title}</h3>
                     <p className="product-preview-card-text">{product.description}</p>
-                    <Link to="/products" className="product-preview-link">
+                    <a href="/products#product-accordion-section" className="product-preview-link" onClick={handleProductClick}>
                       <span>Learn more</span>
                       <i className="fa-solid fa-arrow-right"></i>
-                    </Link>
+                    </a>
                   </div>
                 </>
               ) : (
@@ -104,10 +121,10 @@ const ProductPreview = () => {
                   <div className="product-preview-card-content">
                     <h3 className="product-preview-card-title">{product.title}</h3>
                     <p className="product-preview-card-text">{product.description}</p>
-                    <Link to="/products" className="product-preview-link">
+                    <a href="/products#product-accordion-section" className="product-preview-link" onClick={handleProductClick}>
                       <span>Learn more</span>
                       <i className="fa-solid fa-arrow-right"></i>
-                    </Link>
+                    </a>
                   </div>
                   <div className="product-preview-img-wrapper">
                     <img src={product.image} alt={product.title} className="product-preview-img" />

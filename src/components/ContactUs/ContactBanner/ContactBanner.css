@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.peellnnova-contact-banner-section {
+  position: relative;
+  padding: 140px 20px;
+  background-image: url('../../../assets/bannerImg.jpg');
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Dark linear gradient overlay */
+.peellnnova-contact-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+}
+
+.peellnnova-contact-banner-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Extra-large scaling for the header with white text */
+.peellnnova-banner-title {
+  font-size: clamp(3rem, 9.2vw, 5.8rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+.banner-growth-icon {
+  display: inline-block;
+  margin-left: 14px;
+  font-size: 0.75em;
+  color: #a3e635; /* Vibrant light green accent matching your theme */
+  vertical-align: middle;
+}
+
+.peellnnova-banner-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: #d1d5db; /* Light gray text for readability on dark overlay */
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  max-width: 680px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .peellnnova-contact-banner-section {
+    padding: 90px 16px;
+  }
+}

@@ -148,7 +148,7 @@ const ProductSection = () => {
   const product = productsData[currentIndex];
 
   return (
-    <section className="product-accordion-section">
+    <section className="product-accordion-section" id='product-accordion-section'>
       <div className="slanted-bg-layer" aria-hidden="true">
         <div className="square-grid-pattern"></div>
         {filledSquareCells.map((pos, idx) => (

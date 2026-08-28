@@ -85,7 +85,7 @@ const TeamSection = () => {
   };
 
   return (
-    <section className="team-section">
+    <section className="team-section" id='team-section'>
       <div className="team-container">
 
         {/* Header Controls */}

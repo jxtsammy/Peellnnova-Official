@@ -44,16 +44,6 @@ const ContactSection = () => {
               <h3>Email</h3>
               <a href="mailto:neuros@mail.co" className="email-link">neuros@mail.co</a>
             </div>
-
-            <div className="info-box">
-              <h3>Social network</h3>
-              <div className="social-icons">
-                <a href="#facebook" aria-label="Facebook">f</a>
-                <a href="#twitter" aria-label="Twitter">𝕏</a>
-                <a href="#linkedin" aria-label="LinkedIn">in</a>
-                <a href="#youtube" aria-label="YouTube">▶</a>
-              </div>
-            </div>
           </div>
         </motion.div>
 

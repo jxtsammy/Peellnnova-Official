@@ -21,7 +21,6 @@
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px),
     repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px);
   background-size: 80px 80px;
-  /* Fades out smoothly so the top is less visible and increases toward the bottom */
   -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
   pointer-events: none;
@@ -55,7 +54,7 @@
 
 .contact-main-title {
   font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -2px;
   line-height: 1.1;
   margin: 0 0 24px 0;
@@ -184,8 +183,8 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  background-color: #3f6212;
-  color: #ffffff;
+  background-color: #a3e635;
+  color: #000000;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
   font-weight: 600;

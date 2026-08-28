@@ -27,7 +27,7 @@ const TheSolution = () => {
   };
 
   return (
-    <section className="solution-section">
+    <section className="solution-section" id='solution-section'>
       <motion.div
         className="solution-container"
         initial="hidden"

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.peellnnova-blog-hero {
+  position: relative;
+  background-color: #a3e635; /* Signature light green accent */
+  /* Subtle diagonal grid pattern overlaid using repeating linear gradients */
+  background-image:
+    repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 1px, transparent 0, transparent 50%),
+    repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.03) 0, rgba(0, 0, 0, 0.03) 1px, transparent 0, transparent 50%);
+  background-size: 40px 40px;
+
+  padding: 80px 60px 100px 60px;
+  min-height: 55vh;
+  display: flex;
+  align-items: flex-end;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  /* Clip-path successfully removed */
+}
+
+.peellnnova-blog-hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 2;
+  gap: 40px;
+}
+
+.hero-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+}
+
+.hero-title-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.peellnnova-hero-main-title {
+  font-size: clamp(4.5rem, 16vw, 18rem);
+  font-weight: 800;
+  color: #111111;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  margin-bottom: 30px;
+  text-transform: lowercase;
+}
+
+/* Section Description placed directly underneath */
+.peellnnova-hero-description {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: #1f2937;
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* Diagonal Arrow on the Right */
+.hero-arrow-box {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: #111111;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.hero-arrow-box i {
+  transform: rotate(-45deg);
+  display: inline-block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .peellnnova-blog-hero {
+    display: none;
+  }
+
+}

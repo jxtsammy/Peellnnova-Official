@@ -32,6 +32,14 @@ import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSu
 
 //Contact Page
 import ContactIntro from './components/ContactUs/ContactIntro/ContactIntro'
+import ContactBanner from './components/ContactUs/ContactBanner/ContactBanner';
+
+//Blogs Page
+import Blogs from './components/Blogs/BlogsNews/Blogs';
+import BlogsHeader from './components/Blogs/BlogsHeader/BlogsHeader'
+
+//Newsletter
+import NewsletterSub from './components/Blogs/NewsletterSub/Newsletter'
 
 function App() {
   return (
@@ -51,6 +59,7 @@ function App() {
               <TheSolution />
               <InsightsVideo />
               <ProductsPreview />
+              <NewsletterSub />
             </main>
           }
         />
@@ -78,6 +87,7 @@ function App() {
               <OurVision />
               <OurStory />
               <ImpactMetrics />
+              <NewsletterSub />
             </main>
           }
         />
@@ -99,7 +109,21 @@ function App() {
         path="/contact"
         element={
             <main>
+              <ContactBanner />
               <ContactIntro />
+              <NewsletterSub />
+            </main>
+          }
+        />
+
+        {/*The Contact Us Page*/}
+        <Route
+        path="/blog"
+        element={
+            <main>
+              <BlogsHeader />
+              <Blogs />
+              <NewsletterSub />
             </main>
           }
         />

@@ -44,7 +44,7 @@ const VisionSection = () => {
   };
 
   return (
-    <section className="vision-section">
+    <section className="vision-section" id='our-vision-section'>
       <motion.div
         className="vision-container"
         variants={containerVariants}

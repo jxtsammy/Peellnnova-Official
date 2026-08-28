@@ -1,10 +1,12 @@
 import { useEffect, useRef } from 'react';
 import './FooterStyle.css';
-import logo from '../../../assets/PeellnnovaLogoWhite.png'
+import { Link, useNavigate } from 'react-router-dom';
+import logo from '../../../assets/PeellnnovaLogoWhite.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const footerRef = useRef(null);
+  const navigate = useNavigate();
 
   const socialLinks = [
     { name: 'Facebook', icon: 'fa-brands fa-facebook-f', url: 'https://facebook.com' },
@@ -35,32 +37,28 @@ const Footer = () => {
     });
   };
 
-  const handleScroll = (e, id) => {
+  const handleNavigateToSection = (e, path, sectionId) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate(path);
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 80; // Adjust for fixed navbar height if needed
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 350);
   };
 
   return (
     <footer className="footer-container" ref={footerRef}>
-      <div className="footer-top-white"></div>
 
       <div className="footer-bottom-green">
-        <div className="footer-banner-wrapper">
-          <div className="footer-banner">
-            <h2>Turning agricultural waste<br />in to healthier homes</h2>
-            <form className="banner-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="input-group">
-                <i className="fa-regular fa-envelope"></i>
-                <input type="email" placeholder="Enter your email address" required />
-              </div>
-              <button type="submit" className="btn-banner">Register Now</button>
-            </form>
-          </div>
-        </div>
-
         <div className="footer-content">
           <div className="footer-grid">
             <div className="footer-col brand-col">
@@ -74,7 +72,7 @@ const Footer = () => {
               <p className="brand-desc">
                 The order path to creation elements for world sites and apps user experience.
               </p>
-              <div className="social-icons">
+              <div className="footer-social-icons">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
@@ -94,34 +92,123 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="col-title">Company</h4>
               <ul className="footer-nav">
-                <li><a href="#about" onClick={(e) => handleScroll(e, 'about')}>About Us</a></li>
-                <li><a href="#team" onClick={(e) => handleScroll(e, 'team')}>Our Team</a></li>
-                <li><a href="#blog" onClick={(e) => handleScroll(e, 'blog')}>Blog</a></li>
-                <li><a href="#careers" onClick={(e) => handleScroll(e, 'careers')}>Careers & Vacancies</a></li>
-                <li><a href="#privacy" onClick={(e) => handleScroll(e, 'privacy')}>Terms & Policy</a></li>
-                <li><a href="#contact" onClick={(e) => handleScroll(e, 'contact')}>Contact Us</a></li>
+                <li>
+                  <Link to="/about" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/products" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    Our Products
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/impact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    Impact
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/blog" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    Blogs
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+                    Contact Us
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div className="footer-col">
-              <h4 className="col-title">Where to Buy</h4>
+              <h4 className="col-title">Explore More</h4>
               <ul className="footer-nav">
-                <li><a href="#retailers" onClick={(e) => handleScroll(e, 'retailers')}>Our Retailers</a></li>
-                <li><a href="#find-store" onClick={(e) => handleScroll(e, 'find-store')}>Find a Store</a></li>
-                <li><a href="#distributors" onClick={(e) => handleScroll(e, 'distributors')}>Distributors</a></li>
-                <li><a href="#stores" onClick={(e) => handleScroll(e, 'stores')}>Store Locations</a></li>
-                <li><a href="#wholesale" onClick={(e) => handleScroll(e, 'wholesale')}>Wholesale Portal</a></li>
+                <li>
+                  <a
+                    href="/#why-exist-section"
+                    onClick={(e) => handleNavigateToSection(e, '/', 'why-exist-section')}
+                  >
+                    Why We Exist
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/impact#our-vision-section"
+                    onClick={(e) => handleNavigateToSection(e, '/impact', 'our-vision-section')}
+                  >
+                    Vision
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/#solution-section"
+                    onClick={(e) => handleNavigateToSection(e, '/', 'solution-section')}
+                  >
+                    Solution
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/about#team-section"
+                    onClick={(e) => handleNavigateToSection(e, '/about', 'team-section')}
+                  >
+                    The Team
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/impact#story-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/impact', 'story-accordion-section')}
+                  >
+                    Our Journey
+                  </a>
+                </li>
               </ul>
             </div>
 
             <div className="footer-col">
               <h4 className="col-title">Popular Products</h4>
               <ul className="footer-nav">
-                <li><a href="#products" onClick={(e) => handleScroll(e, 'products')}>Bio-fertilizers</a></li>
-                <li><a href="#products" onClick={(e) => handleScroll(e, 'products')}>Eco Pest Controls</a></li>
-                <li><a href="#products" onClick={(e) => handleScroll(e, 'products')}>Organic Feeds</a></li>
-                <li><a href="#products" onClick={(e) => handleScroll(e, 'products')}>Crop Boosters</a></li>
-                <li><a href="#products" onClick={(e) => handleScroll(e, 'products')}>Soil Conditioners</a></li>
+                <li>
+                  <a
+                    href="/products#product-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                  >
+                    Bio-fertilizers
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products#product-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                  >
+                    Eco Pest Controls
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products#product-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                  >
+                    Organic Feeds
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products#product-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                  >
+                    Crop Boosters
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/products#product-accordion-section"
+                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                  >
+                    Soil Conditioners
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
