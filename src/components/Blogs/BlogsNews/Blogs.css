@@ -230,12 +230,17 @@
 
 /* Responsive Styles */
 @media (max-width: 968px) {
-  .peellnnova-blog-container{
-    padding: 0;
+  .peellnnova-blog-section{
+    padding: 20px;
   }
+
   .peellnnova-blog-header {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .peellnnova-blog-title-wrap h2{
+    font-size: 45px;
   }
 
   .peellnnova-blog-nav-buttons {
