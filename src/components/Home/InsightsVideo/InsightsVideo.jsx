@@ -5,7 +5,7 @@ const InsightVideo = () => {
   const youtubeVideoId = "U2d6M2mjNsI?si=etPR9Qt0N45pQ8Aa";
 
   return (
-    <section className="insight-video-section">
+    <section className="insight-video-section" id='insight-video-section'>
       <div className="insight-video-container">
 
         {/* Header */}

@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.who-we-are-section {
+  width: 100%;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: 'Poppins', sans-serif;
+  padding: 100px 50px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.who-we-are-container {
+  max-width: 1350px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Top Section Layout */
+.who-header-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: flex-end;
+  gap: 60px;
+}
+
+.who-main-heading {
+  font-size: clamp(2rem, 3.2vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -1.2px;
+  color: #111111;
+  margin: 0;
+}
+
+/* Right-aligned Header Column */
+.who-header-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.who-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.who-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #111111;
+  border-radius: 50%;
+}
+
+.who-badge-text {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.who-sub-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555555;
+  font-weight: 300;
+  margin: 0;
+}
+
+.who-learn-btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border: 1px solid #d1d5db;
+  border-radius: 30px;
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Bottom Cards Grid (Forcing Square 1:1 Aspect Ratio) */
+.who-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.who-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Image Cards */
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Stat Metric Cards */
+.stat-card {
+  padding: 32px;
+  justify-content: space-between;
+}
+
+.light-gray {
+  background-color: #f4f5f7;
+  color: #111111;
+}
+
+.lime-green {
+  background-color: #ccff00;
+  color: #111111;
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 300;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.arrow-icon-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #111111;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.arrow-icon-btn.dark {
+  background-color: #111111;
+  color: #ccff00;
+}
+
+.card-content-area {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin: 0;
+  line-height: 1.25;
+}
+
+.card-desc {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #4b5563;
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Responsive Scaling */
+@media (max-width: 1200px) {
+  .who-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .who-card {
+    aspect-ratio: auto;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .who-header-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .who-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .who-we-are-section {
+    padding: 60px 20px;
+  }
+}

@@ -1,88 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.creative-hero-edge {
-  background-color: #ffffff;
-  background-image:
-    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
-    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
-  background-size: 60px 60px;
-  color: #111111;
-    width: 100%  ;
-  min-height: 100vh;
+.agri-hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 130vh; /* Expanded height */
+  background:
+    linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.24) 60%, rgba(0, 0, 0, 0) 100%),
+    url('../../../assets/hero.jpg') no-repeat center center / cover;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Bottom alignment for content */
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  position: relative;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
+  padding: 60px 50px 80px 50px;
   box-sizing: border-box;
 }
 
-.center-hero-content {
+.agri-hero-container {
   position: relative;
+  z-index: 2;
+  max-width: 1350px;
   width: 100%;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+/* Left Hero Content with lighter weight styling */
+.agri-hero-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 620px;
+}
+
+.agri-pill-tag {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 300; /* Lighter weight */
+  margin-bottom: 20px;
+  width: fit-content;
+  letter-spacing: 0.5px;
+}
+
+.agri-main-title {
+  font-size: clamp(2.4rem, 5vw, 6rem);
+  font-weight: 600; /* Lighter headline weight */
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0 0 16px 0;
+}
+
+.agri-subtitle {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+  font-weight: 300; /* Lighter body weight */
+}
+
+.agri-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background-color: #ffffff;
+  color: #111111;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: fit-content;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.agri-cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.agri-arrow-icon {
+  width: 26px;
+  height: 26px;
+  background-color: #111111;
+  color: #ffffff;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  font-size: 0.7rem;
 }
 
-.giant-neon-text {
-  font-size: clamp(8rem, 24vw, 28rem);
-  font-weight: 900;
-  color: #ccff00;
-  line-height: 0.85;
-  margin: 0;
-  width: 100vw;
-  text-align: center;
-  letter-spacing: -6px;
-  text-transform: lowercase;
-  user-select: none;
-  z-index: 1;
-}
-
-.sunburst-graphic {
-  position: absolute;
-  width: 650px;
-  height: 650px;
-  background: repeating-conic-gradient(
-    from 0deg at 50% 50%,
-    #ccff00 0deg 2deg,
-    transparent 2deg 10deg
-  );
-  mask-image: radial-gradient(circle, black 30%, transparent 80%);
-  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 80%);
-  opacity: 0.45;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.hero-overlay-box {
-  position: absolute;
-  z-index: 3;
+/* Right Glassmorphism Card & Arrows Area */
+.agri-hero-right {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.hero-overlay-box h2 {
-  font-size: clamp(2.2rem, 4.5vw, 4.8rem);
-  font-weight: 800;
-  color: #111111;
-  line-height: 1.05;
-  letter-spacing: -1.5px;
-  margin: 0;
-  text-align: center;
+/* Top Right Navigation Arrows */
+.card-nav-arrows {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.lime-dot {
-  width: 18px;
-  height: 18px;
+.card-nav-arrows button {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.card-nav-arrows button:hover {
+  color: #ffffff;
+}
+
+.agri-mission-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 28px;
+  border-radius: 16px;
+  color: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.mission-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.mission-dot {
+  width: 6px;
+  height: 6px;
   background-color: #ccff00;
   border-radius: 50%;
-  flex-shrink: 0;
-  margin-top: 6px;
+}
+
+.agri-mission-card h3 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.agri-mission-card p {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300; /* Lighter font weight */
+  margin: 0 0 18px 0;
+}
+
+.mission-learn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 400;
+  transition: opacity 0.2s;
+}
+
+.mission-learn-link:hover {
+  opacity: 0.7;
+}
+
+/* Bottom Watermark Text Styling */
+.bottom-watermark-text {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(8rem, 18vw, 20rem);
+  font-weight: 900;
+  color: #b3e600;
+  line-height: 1;
+  text-transform: lowercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  letter-spacing: -4px;
+  overflow-x: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .agri-hero-section {
+    align-items: center;
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .agri-hero-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .agri-hero-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .agri-mission-card {
+    max-width: 100%;
+  }
+
+  .bottom-watermark-text {
+    font-size: 30vw;
+    overflow: hidden;
+    bottom: -25px;
+  }
 }

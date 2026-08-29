@@ -10,6 +10,7 @@ import WhyWeExist from './components/Home/WhyWeExist/WhyWeExist'
 import TheProblem from './components/Home/TheProblem/TheProblem'
 import TheSolution from './components/Home/TheSolution/TheSolution'
 import InsightsVideo from './components/Home/InsightsVideo/InsightsVideo'
+import WhoWeAre from './components/Home/WhoWeAre/WhoWeAre'
 import ProductsPreview from './components/Home/ProdutsPreview/ProductPreview'
 
 //About Page
@@ -54,6 +55,7 @@ function App() {
           element={
             <main>
               <Hero />
+              <WhoWeAre />
               <WhyWeExist />
               <TheProblem />
               <TheSolution />
