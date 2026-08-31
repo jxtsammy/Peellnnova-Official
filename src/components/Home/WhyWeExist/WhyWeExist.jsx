@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import './ExistStyle.css';
-import bgImage from '../../../assets/exist.png';
+import bgImage from '../../../assets/orangeFarm.jpg';
 import farmer from '../../../assets/farmer.jpg';
 
 const MotionLink = motion(Link);

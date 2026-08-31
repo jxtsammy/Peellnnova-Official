@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const slidesData = [
@@ -29,6 +30,10 @@ const AgriHeroSlider = () => {
 
   const currentSlide = slidesData[currentIndex];
 
+  const handleButtonClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section className="agri-hero-section">
       <div className="agri-hero-container">
@@ -38,7 +43,7 @@ const AgriHeroSlider = () => {
           <div className="agri-pill-tag">Sustainable Farming Tech</div>
 
           <h1 className="agri-main-title">
-            Transforming <br/> Agricultural Waste <br/> to Healthier Homes
+            Transforming <br/> Fruit Waste to<br/> Healthier Products
           </h1>
 
           <p className="agri-subtitle">
@@ -72,10 +77,10 @@ const AgriHeroSlider = () => {
               <h3>{currentSlide.title}</h3>
             </div>
             <p>{currentSlide.text}</p>
-            <a href="#learn-more" className="mission-learn-link">
+            <Link to="/about" className="mission-learn-link" onClick={handleButtonClick}>
               <span>Learn More</span>
               <i className="fa-solid fa-arrow-right"></i>
-            </a>
+            </Link>
           </div>
 
         </div>

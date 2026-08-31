@@ -1,0 +1,129 @@
+.mission-section {
+  position: relative;
+  background-color: #ffffff;
+  padding: 80px 20px 20px 20px;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  width: 100%;
+}
+
+.mission-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 968px) {
+  .mission-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.mission-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3;
+}
+
+.mission-main-title {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: #000000;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 768px) {
+  .mission-main-title {
+    font-size: 32px;
+  }
+}
+
+.mission-description {
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.mission-quote-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.quote-line {
+  width: 4px;
+  height: 48px;
+  background-color: #bcf800;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.mission-quote {
+  font-size: 15px;
+  font-weight: 600;
+  font-style: italic;
+  color: #007a3f;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.mission-image-col {
+  width: 100%;
+  height: 480px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.mission-img-wrapper {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .mission-img-wrapper {
+    height: 360px;
+  }
+
+  .mission-giant-bg-text{
+    font-size: 70px;
+    left: 0px;
+    bottom: -10px;
+  }
+}
+
+.mission-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mission-giant-bg-text {
+  position: absolute;
+  bottom: -20px;
+  left: 37%;
+  transform: translateX(-50%);
+  font-size: clamp(90px, 18vw, 240px);
+  font-weight: 900;
+  color: #a3e635;
+  line-height: 1;
+  text-transform: lowercase;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+}

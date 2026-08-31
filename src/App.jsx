@@ -19,6 +19,7 @@ import CompanyInfo from './components/AboutUs/AboutCompany/CompanyInfo'
 import ValueProposition from './components/AboutUs/ValueProposition/ValueProposition'
 import OurTeam from './components/AboutUs/OurTeam/OurTeam'
 import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/ProcessAndStandards'
+import OurMission from './components/AboutUs/Mission/Mission'
 
 //Impact Page
 import ImpactHeader from './components/Impact/ImpactHeader/ImpactHeader'
@@ -74,6 +75,7 @@ function App() {
               <AboutHeader />
               <CompanyInfo />
               <ValueProposition />
+              <OurMission />
               <ProcessAndStandards />
               <OurTeam />
             </main>

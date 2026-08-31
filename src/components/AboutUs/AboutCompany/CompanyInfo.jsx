@@ -4,7 +4,7 @@ import aboutImg from '../../../assets/miMa.jpg'
 
 const CompanyInfo = () => {
   return (
-    <section className="company-info-section">
+    <section className="company-info-section" id='company-info-section'>
       <div className="company-info-container">
 
         {/* Left Side Image */}

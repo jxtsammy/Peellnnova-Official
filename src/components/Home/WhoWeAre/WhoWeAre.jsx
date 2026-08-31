@@ -24,21 +24,12 @@ const WhoWeAre = () => {
           <div className="who-header-right">
             <div className="who-badge-row">
               <span className="who-dot"></span>
-              <span className="who-badge-text">Who We Are at Farmora</span>
+              <span className="who-badge-text">Who We Are at Peellnnova</span>
             </div>
 
             <p className="who-sub-text">
             Peellnnova is turning the challenge of local fruit processing waste into an economic and environmental opportunity. We harness advanced recycling techniques to convert surplus pineapple and orange rinds into premium, sustainable goods for a greener future.
             </p>
-
-            <motion.a
-              href="#learn-more"
-              className="who-learn-btn"
-              whileHover={{ scale: 1.03, backgroundColor: '#111111', color: '#ffffff', borderColor: '#111111' }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <span>Learn More</span>
-            </motion.a>
           </div>
         </motion.div>
 

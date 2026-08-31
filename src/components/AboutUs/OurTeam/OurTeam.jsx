@@ -1,5 +1,5 @@
-import { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './OurTeam.css';
 
 const teamMembers = [
@@ -8,10 +8,10 @@ const teamMembers = [
     firstName: "Gilbert",
     lastName: "Yaw Sonny",
     role: "Co-Founder & CEO. Administration",
-    bio: "Passionate about building seamless mobile and web applications with modern design systems.",
+    bio: "Gilbert Yaw Sonny is a herbal medicine innovator and entrepreneur passionate about turning African scientific knowledge and agricultural waste into practical solutions for healthier communities. As Co-Founder and CEO of Peellnnova Limited Company, he leads the company's vision, formulation research, product development and commercialization. He has led multidisciplinary projects and represented Ghana on major national and international innovation platforms. His ambition is to build scalable African health innovations that create value from local resources while improving lives and livelihoods.",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://linkedin.com",
-    email: "julie.salley@example.com",
+    linkedin: "https://www.linkedin.com/in/gilbert-sonny-431450300?",
+    email: "gilbertosonnybrown2001@gmail.com",
     isHighlighted: true
   },
   {
@@ -19,10 +19,10 @@ const teamMembers = [
     firstName: "Nafisah",
     lastName: "Hamidu Dauda",
     role: "Co-Founder & COO. Operations",
-    bio: "Driving strategic vision and sustainable growth across global circular economy markets.",
+    bio: "An entrepreneur and strategic operations professional passionate about building impactful businesses that create sustainable opportunities for communities. As Co-Founder and COO of Peellnnova Limited Company, she supports business operations, coordination, partnerships and the execution of the company's growth strategy. Her experience spans entrepreneurship, project leadership, sales and marketing, and innovation ecosystems. She has participated in entrepreneurial and leadership programmes strengthening her ability to translate ideas into practical impact.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://linkedin.com",
-    email: "alex.rivera@example.com",
+    linkedin: "https://www.linkedin.com/in/nafisah-dauda-17536323a",
+    email: "nafisahdauda99@gmail.com",
     isHighlighted: false
   },
   {
@@ -30,10 +30,10 @@ const teamMembers = [
     firstName: "Enoch",
     lastName: "Siekaah",
     role: "Co-Founder & User Experience Officer",
-    bio: "Optimizing supply chains and scaling sustainable eco-cleaner production pipelines.",
+    bio: "Siekaah is a development planning professional and sustainability-focused innovator passionate about transforming environmental challenges into practical community solutions. As Co-Founder and User Experience Officer at Peellnnova Limited Company, he contributes to user-centered product development, research, community engagement and the integration of sustainability into the company's solutions. His experience includes research, project planning, community engagement and working with agricultural waste to develop value-added solutions.",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://linkedin.com",
-    email: "sophia.chen@example.com",
+    linkedin: "https://www.linkedin.com/in/enoch-siekaah-47aa26221",
+    email: "esiekaah@gmail.com",
     isHighlighted: false
   },
   {
@@ -41,144 +41,183 @@ const teamMembers = [
     firstName: "Benedette",
     lastName: "Naame",
     role: "Lead Research Scientist",
-    bio: "Pioneering bio-fertilizer formulations derived directly from agricultural peel waste.",
+    bio: "Benedette leads Peellnnova's human resources and financial management, helping build the people, systems and financial discipline needed for sustainable growth. She supports budgeting, resource allocation, team development and organizational planning, ensuring that Peellnnova's operations remain efficient and accountable as the company expands. With a strong background in project management and team leadership, Benedette plays an important role in strengthening Peellnnova's internal capacity.",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
-    linkedin: "https://linkedin.com",
-    email: "marcus.vance@example.com",
+    linkedin: "https://www.linkedin.com/in/benedette-naame-658150172",
+    email: "benedettewnaame@gmail.com",
     isHighlighted: false
   }
 ];
 
-const TeamSection = () => {
-  const scrollRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
+export default function OurTeam() {
+  const [selectedMember, setSelectedMember] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const scrollContainerRef = useRef(null);
 
-  const checkScrollPosition = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-      setCanScrollLeft(scrollLeft > 10);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+  const handleOpenModal = (member) => {
+    setSelectedMember(member);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedMember(null);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -320, behavior: 'smooth' });
     }
   };
 
-  useEffect(() => {
-    const el = scrollRef.current;
-    if (el) {
-      checkScrollPosition();
-      el.addEventListener('scroll', checkScrollPosition);
-      window.addEventListener('resize', checkScrollPosition);
-    }
-    return () => {
-      if (el) {
-        el.removeEventListener('scroll', checkScrollPosition);
-      }
-      window.removeEventListener('resize', checkScrollPosition);
-    };
-  }, []);
-
-  const handleScroll = (direction) => {
-    if (scrollRef.current) {
-      const scrollAmount = direction === 'left' ? -400 : 400;
-      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 320, behavior: 'smooth' });
     }
   };
 
   return (
-    <section className="team-section" id='team-section'>
+    <section className="our-team-section">
       <div className="team-container">
 
-        {/* Header Controls */}
-        <div className="team-header">
+        <motion.div
+          className="team-header-col"
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div>
-            <span className="team-tagline">MEET THE TEAM</span>
-            <h2 className="team-title">The Innovators <br/> Behind PeelInnova</h2>
+            <span className="team-tag">• OUR TEAM</span>
+            <h2 className="team-main-title">Innovative Team Behind PeelInnova</h2>
+            <p className="team-description">
+              Our team consists of skilled professionals with expertise in strategy, operations, analytics, and sustainable innovation.
+            </p>
           </div>
 
-          <div className="team-nav-buttons">
-            <button
-              className={`team-nav-btn ${canScrollLeft ? 'active' : 'inactive'}`}
-              onClick={() => handleScroll('left')}
-              disabled={!canScrollLeft}
+          <div className="team-carousel-controls">
+            <motion.button
+              className="control-btn dark-btn"
+              onClick={scrollLeft}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
               aria-label="Scroll left"
             >
-              <i className="fa-solid fa-arrow-left"></i>
-            </button>
-            <button
-              className={`team-nav-btn ${canScrollRight ? 'active' : 'inactive'}`}
-              onClick={() => handleScroll('right')}
-              disabled={!canScrollRight}
+              <i className="fa-solid fa-arrow-left" style={{ color: '#bcf800' }}></i>
+            </motion.button>
+            <motion.button
+              className="control-btn neon-btn"
+              onClick={scrollRight}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.95 }}
               aria-label="Scroll right"
             >
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
+              <i className="fa-solid fa-arrow-right" style={{ color: '#112211' }}></i>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Carousel Grid */}
-        <div className="team-cards-wrapper" ref={scrollRef}>
-          {teamMembers.map((member) => (
+        <div className="team-cards-track" ref={scrollContainerRef}>
+          {teamMembers.map((member, index) => (
             <motion.div
+              className="team-card"
               key={member.id}
-              className={`team-card ${member.isHighlighted ? 'highlighted-card' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {/* Top Text Section */}
-              <div className="card-top">
-                <div className="card-pills-row">
-                  <span className="role-pill">{member.role}</span>
-                  <div className="icon-badge">
-                    <i className="fa-solid fa-leaf"></i>
-                  </div>
-                </div>
+              <img src={member.image} alt={`${member.firstName} ${member.lastName}`} className="team-card-img" />
 
-                <h3 className="member-name">
-                  <span className="first-name">{member.firstName}</span>
-                  <span className="last-name">{member.lastName}</span>
-                </h3>
+              <motion.button
+                className="card-arrow-btn"
+                onClick={() => handleOpenModal(member)}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="View member details"
+              >
+                <i className="fa-solid fa-arrow-up-right-from-square" style={{ color: '#112211', fontSize: '14px' }}></i>
+              </motion.button>
 
-                <p className="member-bio">{member.bio}</p>
-              </div>
-
-              {/* Bottom Image Box */}
-              <div className="card-image-box">
-                <img
-                  src={member.image}
-                  alt={`${member.firstName} ${member.lastName}`}
-                  className="member-img"
-                />
-
-                {/* Dark Green Social Pill Aligned Left */}
-                <div className="action-pill">
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="action-icon-link"
-                    aria-label={`${member.firstName} LinkedIn Profile`}
-                  >
-                    <i className="fa-brands fa-linkedin-in"></i>
-                  </a>
-                  <span className="action-divider"></span>
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="action-icon-link"
-                    aria-label={`Send email to ${member.firstName}`}
-                  >
-                    <i className="fa-regular fa-envelope"></i>
-                  </a>
-                </div>
+              <div className="team-card-overlay">
+                <span className="card-role-text">{member.role.split('.')[0]}</span>
+                <h3 className="card-name-text">{member.firstName} {member.lastName}</h3>
               </div>
             </motion.div>
           ))}
         </div>
 
       </div>
+
+      <AnimatePresence>
+        {isModalOpen && selectedMember && (
+          <motion.div
+            className="team-modal-backdrop"
+            onClick={handleCloseModal}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="team-modal-box"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.9, opacity: 0, y: 20 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            >
+              <motion.button
+                className="modal-close-btn"
+                onClick={handleCloseModal}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Close modal"
+              >
+                <i className="fa-solid fa-xmark" style={{ color: '#333' }}></i>
+              </motion.button>
+
+              <div className="modal-grid-layout">
+                <div className="modal-img-wrapper">
+                  <img src={selectedMember.image} alt={selectedMember.firstName} className="modal-img" />
+                </div>
+
+                <div className="modal-info-wrapper">
+                  <span className="modal-role">{selectedMember.role}</span>
+                  <h3 className="modal-name">{selectedMember.firstName} {selectedMember.lastName}</h3>
+
+                  <div className="modal-bio-container">
+                    <p className="modal-bio">{selectedMember.bio}</p>
+                  </div>
+
+                  <div className="modal-socials-row">
+                    <motion.a
+                      href={selectedMember.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-circle-btn"
+                      whileHover={{ scale: 1.1, backgroundColor: '#d1fae5' }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label="LinkedIn profile"
+                    >
+                      <i className="fa-brands fa-linkedin-in" style={{ color: '#007a3f' }}></i>
+                    </motion.a>
+
+                    <motion.a
+                      href={`mailto:${selectedMember.email}`}
+                      className="social-circle-btn"
+                      whileHover={{ scale: 1.1, backgroundColor: '#d1fae5' }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label="Send email"
+                    >
+                      <i className="fa-solid fa-envelope" style={{ color: '#007a3f' }}></i>
+                    </motion.a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
-};
-
-export default TeamSection;
+}

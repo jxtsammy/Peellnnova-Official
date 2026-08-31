@@ -119,7 +119,7 @@ const ImpactNumbers = () => {
   };
 
   return (
-    <section className="impact-numbers-section">
+    <section className="impact-numbers-section" id='impact-numbers-section'>
       <motion.div
         className="impact-numbers-container"
         variants={containerVariants}
