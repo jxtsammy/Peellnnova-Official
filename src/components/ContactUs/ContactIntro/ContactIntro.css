@@ -1,231 +1,259 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 .contact-section {
-  position: relative;
   width: 100%;
-  padding: 60px 60px;
-  background-color: #a3e635; /* Requested background color */
+  padding: 100px 60px;
+  background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  color: #111111;
   box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* Large Diagonal Grid Pattern with Vertical Fade Mask */
-.diagonal-grid-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px),
-    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.35) 0, rgba(255, 255, 255, 0.35) 1.5px, transparent 0, transparent 80px);
-  background-size: 80px 80px;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 100%);
-  pointer-events: none;
-  z-index: 1;
 }
 
 .contact-container {
-  position: relative;
-  z-index: 2;
   max-width: 1280px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 60px;
-  align-items: center;
+  display: flex;
+  gap: 80px;
+  align-items: flex-start;
 }
 
 /* Left Column Styling */
-.contact-left {
+.contact-left-col {
+  flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 40px;
 }
 
-.contact-tag {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #1a2e05;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.contact-main-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+.brand-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
-  letter-spacing: -2px;
-  line-height: 1.1;
-  margin: 0 0 24px 0;
-  color: #111111;
+  font-size: 18px;
+  color: #111827;
 }
 
-.contact-desc {
-  font-size: 0.95rem;
-  color: #1f2937;
-  line-height: 1.6;
-  margin: 0 0 40px 0;
-  max-width: 480px;
+.brand-icon {
+  font-size: 20px;
 }
 
-.contact-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.info-box h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #111111;
-  margin: 0 0 8px 0;
-  text-transform: capitalize;
-}
-
-.info-box p, .info-box a {
-  font-size: 0.9rem;
-  color: #1f2937;
-  margin: 0 0 4px 0;
-  text-decoration: none;
-  display: block;
-  transition: color 0.2s ease;
-}
-
-.info-box a.email-link:hover {
-  color: #111111;
-}
-
-.social-icons {
+.contact-info-item {
   display: flex;
   gap: 16px;
-  margin-top: 8px;
+  align-items: flex-start;
 }
 
-.social-icons a {
-  font-size: 0.95rem;
+.info-icon {
+  width: 24px;
+  height: 24px;
+  color: #4b5563;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-info-item h4 {
+  color: #111827;
+  font-size: 16px;
   font-weight: 600;
-  color: #111111;
+  margin: 0 0 4px 0;
+}
+
+.contact-info-item p {
+  color: #4b5563;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.contact-info-item a,
+.contact-info-item span {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
+  line-height: 1.5;
+}
+
+.contact-info-item a:hover {
+  text-decoration: underline;
+}
+
+.social-icons-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-icons-row a {
+  width: 20px;
+  height: 20px;
+  color: #4b5563;
   transition: color 0.2s ease;
 }
 
-.social-icons a:hover {
-  color: #1a2e05;
+.social-icons-row a:hover {
+  color: #111827;
 }
 
-/* Right Column: Form Card Styling */
-.contact-right {
+.social-icons-row svg {
   width: 100%;
+  height: 100%;
 }
 
-.form-card {
-  background-color: #ffffff;
-  border-radius: 28px;
-  padding: 50px 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+/* Right Column: Neon Green Card Styling */
+.contact-right-card {
+  flex: 1;
+  background-color: #a3e635; /* Vibrant Lime/Neon Green matching reference */
+  border-radius: 32px;
+  padding: 56px 80px;
+  box-sizing: border-box;
 }
 
-.form-card h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #111111;
-  margin: 0 0 8px 0;
-  letter-spacing: -0.5px;
+.form-header h2 {
+  color: #111827;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -1px;
 }
 
-.form-subtitle {
-  font-size: 0.88rem;
-  color: #6b7280;
-  line-height: 1.5;
-  margin: 0 0 32px 0;
+.form-header p {
+  color: #1f2937;
+  font-size: 15px;
+  margin: 0 0 36px 0;
+  font-weight: 500;
 }
 
-.styled-form {
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 
-.input-group input,
-.input-group textarea {
+.form-group input,
+.form-group textarea {
   width: 100%;
-  padding: 14px 0;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  background-color: transparent;
+  background: transparent;
   border: none;
-  border-bottom: 1px solid #d1d5db;
-  color: #111111;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-size: 15px;
+  color: #111827;
+  font-family: 'Poppins', sans-serif;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.2s ease;
 }
 
-.input-group input::placeholder,
-.input-group textarea::placeholder {
-  color: #9ca3af;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(17, 24, 39, 0.5);
 }
 
-.input-group input:focus,
-.input-group textarea:focus {
-  border-color: #3f6212;
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom-color: #111827;
 }
 
-.input-group textarea {
-  resize: vertical;
-  min-height: 80px;
+.form-group textarea {
+  resize: none;
 }
 
-/* Submit Button styled with Dark Green Theme */
-.submit-btn {
-  display: inline-flex;
+/* Services Checkbox Grid */
+.services-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.services-title {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #111827;
+  border-radius: 6px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background-color: #a3e635;
-  color: #000000;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 14px 28px;
-  border-radius: 100px;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  transition: background-color 0.2s ease;
+}
+
+.custom-checkbox.checked {
+  background-color: #111827;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background-color: #111827;
+  color: #ffffff;
   border: none;
+  border-radius: 14px;
+  padding: 18px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  margin-top: 10px;
-  align-self: flex-start;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: 12px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
 }
 
 .submit-btn:hover {
-  background-color: #1a2e05;
-  transform: translateY(-1px);
-}
-
-.btn-arrow {
-  font-size: 1rem;
-  line-height: 1;
+  background-color: #1f2937;
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
+@media (max-width: 900px) {
   .contact-container {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 50px;
   }
-
-  .contact-left {
-    max-width: 100%;
+  .contact-right-card {
+    padding: 36px 24px;
   }
-
-  .form-card {
-    padding: 30px 20px;
+  .form-header h2 {
+    font-size: 30px;
   }
-}
-
-@media (max-width: 576px) {
-  .contact-info-grid {
+  .checkbox-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 }

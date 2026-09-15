@@ -1,19 +1,20 @@
 .mission-section {
-  position: relative;
-  background-color: #ffffff;
-  padding: 80px 20px 20px 20px;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
   width: 100%;
+  background-color: #ffffff;
+  padding: 70px 40px 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #111111;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .mission-container {
-  max-width: 1280px;
+  max-width: 1300px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: flex-start;
   position: relative;
   z-index: 2;
 }
@@ -113,17 +114,15 @@
 
 .mission-giant-bg-text {
   position: absolute;
-  bottom: -20px;
-  left: 37%;
+  bottom: -60px;
+  left: 35%;
   transform: translateX(-50%);
-  font-size: clamp(90px, 18vw, 240px);
+  font-size: clamp(90px, 20vw, 240px);
   font-weight: 900;
-  color: #a3e635;
+  color: #b3e600;
   line-height: 1;
   text-transform: lowercase;
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
-  z-index: 1;
-  opacity: 0.95;
 }

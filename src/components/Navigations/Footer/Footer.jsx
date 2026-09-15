@@ -167,46 +167,38 @@ const Footer = () => {
             </div>
 
             <div className="footer-col">
-              <h4 className="col-title">Popular Products</h4>
+              <h4 className="col-title">Get in Touch</h4>
               <ul className="footer-nav">
                 <li>
                   <a
-                    href="/products#product-accordion-section"
+                    href="/contact#community-section"
                     onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
                   >
-                    Bio-fertilizers
+                    Join Community
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products#product-accordion-section"
+                    href="/contact#faq"
                     onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
                   >
-                    Eco Pest Controls
+                    FAQ
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products#product-accordion-section"
+                    href="/contact#contact-section"
                     onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
                   >
-                    Organic Feeds
+                    Contact Info
                   </a>
                 </li>
                 <li>
                   <a
-                    href="/products#product-accordion-section"
+                    href="/contact#contact-section"
                     onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
                   >
-                    Crop Boosters
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/products#product-accordion-section"
-                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
-                  >
-                    Soil Conditioners
+                    Send Us a Mail
                   </a>
                 </li>
               </ul>

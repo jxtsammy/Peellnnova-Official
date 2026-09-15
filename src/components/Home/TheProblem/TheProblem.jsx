@@ -84,14 +84,6 @@ const TheProblem = () => {
                 <h3 className="problem-card-heading">{card.title}</h3>
                 <p className="problem-card-text">{card.description}</p>
               </div>
-
-              {/* Bottom Cutout with Tag/Link */}
-              <div className="problem-card-cutout-bottom">
-                <a href="#learn-more" className="problem-card-action-btn">
-                  <span>Explore More</span>
-                  <i className="fa-solid fa-chevron-right"></i>
-                </a>
-              </div>
             </motion.div>
           ))}
         </motion.div>

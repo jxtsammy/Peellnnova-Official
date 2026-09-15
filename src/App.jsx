@@ -35,6 +35,8 @@ import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSu
 //Contact Page
 import ContactIntro from './components/ContactUs/ContactIntro/ContactIntro'
 import ContactBanner from './components/ContactUs/ContactBanner/ContactBanner';
+import JoinCommunity from './components/ContactUs/JoinCommunity/JoinCommunity'
+import FAQ from './components/ContactUs/FAQ/FAQ'
 
 //Blogs Page
 import Blogs from './components/Blogs/BlogsNews/Blogs';
@@ -42,6 +44,7 @@ import BlogsHeader from './components/Blogs/BlogsHeader/BlogsHeader'
 
 //Newsletter
 import NewsletterSub from './components/Blogs/NewsletterSub/Newsletter'
+
 
 function App() {
   return (
@@ -74,8 +77,8 @@ function App() {
             <main>
               <AboutHeader />
               <CompanyInfo />
-              <ValueProposition />
               <OurMission />
+              <ValueProposition />
               <ProcessAndStandards />
               <OurTeam />
             </main>
@@ -115,6 +118,8 @@ function App() {
             <main>
               <ContactBanner />
               <ContactIntro />
+              <JoinCommunity />
+              <FAQ />
               <NewsletterSub />
             </main>
           }

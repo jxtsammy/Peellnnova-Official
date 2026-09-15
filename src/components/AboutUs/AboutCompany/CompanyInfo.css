@@ -74,10 +74,10 @@
 .company-info-watermark {
   position: absolute;
   right: -10px;
-  bottom: -40px;
+  bottom: -10px;
   font-size: clamp(8rem, 22vw, 24rem);
   font-weight: 900;
-  color: #a4e043; /* Lime green */
+  color: #b3e600; /* Lime green */
   letter-spacing: -8px;
   line-height: 0.8;
   white-space: nowrap;
