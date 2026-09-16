@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import './ProcessAndStandards.css';
-import img from '../../../assets/maa.jpg';
+import img from '../../../assets/bigMama.jpg';
 
 const processPoints = [
   {

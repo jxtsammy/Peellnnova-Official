@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import './WhoWeAre.css';
 import img from '../../../assets/grandmama.jpg'
+import farmer from '../../../assets/farmerMan.jpg'
 
 const WhoWeAre = () => {
   return (
@@ -46,7 +47,7 @@ const WhoWeAre = () => {
             whileHover={{ y: -6 }}
           >
             <img
-              src={img}
+              src={farmer}
               alt="Farmer in the field"
             />
           </motion.div>
@@ -88,8 +89,8 @@ const WhoWeAre = () => {
             whileHover={{ y: -6 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80"
-              alt="Urban and modern farming crops"
+              src={img}
+              alt="Satified Customers"
             />
           </motion.div>
 

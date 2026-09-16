@@ -3,7 +3,7 @@
 .peellnnova-contact-banner-section {
   position: relative;
   padding: 140px 20px;
-  background-image: url('../../../assets/bannerImg.jpg');
+  background-image: url('../../../assets/african.jpg');
   background-size: cover;
   background-position: center;
   font-family: 'Poppins', sans-serif;
@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.32) 0%, rgba(0, 0, 0, 0.85) 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.65) 100%);
   z-index: 1;
 }
 

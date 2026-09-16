@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import './Mission.css';
-import img from '../../../assets/african.jpg'
+import img from '../../../assets/smilingKids.jpg'
 
 export default function MissionSection() {
   return (

@@ -3,17 +3,27 @@
 .agri-hero-section {
   position: relative;
   width: 100%;
-  min-height: 130vh; /* Expanded height */
-  background:
-    linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.24) 60%, rgba(0, 0, 0, 0) 100%),
-    url('../../../assets/hero.jpg') no-repeat center center / cover;
+  min-height: 130vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  transition: background-image 3s ease-in-out;
   display: flex;
-  align-items: flex-end; /* Bottom alignment for content */
+  align-items: flex-end;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
   padding: 60px 50px 80px 50px;
   box-sizing: border-box;
+}
+
+/* Dark overlay gradient handled in CSS */
+.agri-hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .agri-hero-container {
@@ -46,7 +56,7 @@
   padding: 6px 14px;
   border-radius: 30px;
   font-size: 0.75rem;
-  font-weight: 300; /* Lighter weight */
+  font-weight: 300;
   margin-bottom: 20px;
   width: fit-content;
   letter-spacing: 0.5px;
@@ -54,7 +64,7 @@
 
 .agri-main-title {
   font-size: clamp(2.4rem, 5vw, 6rem);
-  font-weight: 600; /* Lighter headline weight */
+  font-weight: 500;
   color: #ffffff;
   line-height: 1.1;
   letter-spacing: -1px;
@@ -66,7 +76,7 @@
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.6;
   margin: 0 0 28px 0;
-  font-weight: 300; /* Lighter body weight */
+  font-weight: 300;
 }
 
 .agri-cta-button {
@@ -167,7 +177,7 @@
   font-size: 0.82rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.8);
-  font-weight: 300; /* Lighter font weight */
+  font-weight: 300;
   margin: 0 0 18px 0;
 }
 
@@ -208,14 +218,14 @@
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .agri-hero-section {
-    align-items: center;
+    align-items: flex-start;
     min-height: auto;
-    padding: 60px 20px;
+    padding: 50px 20px 100px 20px;
   }
 
   .agri-hero-container {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 40px;
     align-items: flex-start;
   }
 
@@ -229,8 +239,26 @@
   }
 
   .bottom-watermark-text {
-    font-size: 30vw;
-    overflow: hidden;
-    bottom: -25px;
+    font-size: 25vw;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .agri-hero-section {
+    padding: 40px 16px 80px 16px;
+  }
+
+  .agri-main-title {
+    font-size: 2.3rem;
+  }
+
+  .agri-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .bottom-watermark-text {
+    font-size: 28vw;
+    bottom: -10px;
   }
 }

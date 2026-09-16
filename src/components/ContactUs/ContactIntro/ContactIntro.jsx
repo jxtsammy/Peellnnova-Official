@@ -8,11 +8,10 @@ export default function ContactSection() {
     email: '',
     message: '',
     services: {
-      websiteDesign: true,
-      uxDesign: true,
-      userResearch: false,
+      enquiry: true,
+      partnership: false,
+      feedBack: false,
       contentCreation: false,
-      strategyConsulting: false,
       other: false,
     }
   });
@@ -39,6 +38,13 @@ export default function ContactSection() {
 
         {/* Left Column: Info & Socials */}
         <div className="contact-left-col">
+          <div className="form-header">
+            <h2>Got ideas? Our doors are open. Let’s team up.</h2>
+            <p>
+              Whether you’re exploring partnerships, distribution, or sustainable products,
+              we’d love to hear from you. Connect with the Peellnnova team today.
+            </p>
+          </div>
           <div className="contact-info-list">
             <div className="contact-info-item">
               <div className="info-icon">
@@ -58,7 +64,7 @@ export default function ContactSection() {
               <div>
                 <h4>Visit us</h4>
                 <p>Come say hello at our office HQ.</p>
-                <span>100 Smith Street<br />Collingwood VIC 3066 AU</span>
+                <span>Kumasi<br />Ashanti Region, Ghana</span>
               </div>
             </div>
 
@@ -73,14 +79,6 @@ export default function ContactSection() {
               </div>
             </div>
           </div>
-
-          <div className="social-icons-row">
-            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
-            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
-            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a>
-            <a href="#" aria-label="Website"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></a>
-          </div>
         </div>
 
         {/* Right Column: Neon Green Form Card */}
@@ -91,10 +89,6 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="form-header">
-            <h2>Got ideas? We’ve got the skills. Let’s team up.</h2>
-            <p>Tell us more about yourself and what you're got in mind.</p>
-          </div>
 
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
@@ -110,7 +104,7 @@ export default function ContactSection() {
             <div className="form-group">
               <input
                 type="email"
-                placeholder="you@company.com"
+                placeholder="username@email.com"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 required
@@ -119,7 +113,7 @@ export default function ContactSection() {
 
             <div className="form-group">
               <textarea
-                placeholder="Tell us a little about the project..."
+                placeholder="What would you like to tell us?..."
                 rows="3"
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
@@ -130,25 +124,25 @@ export default function ContactSection() {
             <div className="services-selector">
               <label className="services-title">How can we help?</label>
               <div className="checkbox-grid">
-                <div className="checkbox-item" onClick={() => handleCheckboxChange('websiteDesign')}>
-                  <span className={`custom-checkbox ${formData.services.websiteDesign ? 'checked' : ''}`}>
-                    {formData.services.websiteDesign && '✓'}
+                <div className="checkbox-item" onClick={() => handleCheckboxChange('enquiry')}>
+                  <span className={`custom-checkbox ${formData.services.enquiry ? 'checked' : ''}`}>
+                    {formData.services.enquiry && '✓'}
                   </span>
-                  <span>Website design</span>
+                  <span>Enquiry</span>
                 </div>
 
-                <div className="checkbox-item" onClick={() => handleCheckboxChange('contentCreation')}>
-                  <span className={`custom-checkbox ${formData.services.contentCreation ? 'checked' : ''}`}>
-                    {formData.services.contentCreation && '✓'}
+                <div className="checkbox-item" onClick={() => handleCheckboxChange('partnership')}>
+                  <span className={`custom-checkbox ${formData.services.partnership ? 'checked' : ''}`}>
+                    {formData.services.partnership && '✓'}
                   </span>
-                  <span>Content creation</span>
+                  <span>Partnership</span>
                 </div>
 
-                <div className="checkbox-item" onClick={() => handleCheckboxChange('userResearch')}>
-                  <span className={`custom-checkbox ${formData.services.userResearch ? 'checked' : ''}`}>
-                    {formData.services.userResearch && '✓'}
+                <div className="checkbox-item" onClick={() => handleCheckboxChange('feedBack')}>
+                  <span className={`custom-checkbox ${formData.services.feedBack ? 'checked' : ''}`}>
+                    {formData.services.feedBack && '✓'}
                   </span>
-                  <span>User research</span>
+                  <span>Feedback / Suggestions</span>
                 </div>
 
                 <div className="checkbox-item" onClick={() => handleCheckboxChange('other')}>

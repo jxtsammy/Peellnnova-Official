@@ -171,6 +171,7 @@
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
   font-family: inherit;
+  text-decoration: none;
 }
 
 .btn-learn-more:hover {
@@ -203,7 +204,6 @@
 
 .link-team:hover {
   opacity: 0.8;
-  color: #8cc63f;
 }
 
 /* --- Responsive View --- */

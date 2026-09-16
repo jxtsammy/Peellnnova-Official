@@ -1,5 +1,5 @@
 import './JoinCommunity.css';
-import img from '../../../assets/african.jpg';
+import img from '../../../assets/drink.jpg';
 import { motion } from 'framer-motion';
 
 export default function CommunitySection() {
