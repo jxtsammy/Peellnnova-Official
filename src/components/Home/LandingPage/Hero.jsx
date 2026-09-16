@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
-
 
 import heroImage3 from '../../../assets/droneShot.jpg';
 import heroImage2 from '../../../assets/Man.jpg';
@@ -37,24 +36,33 @@ const slidesData = [
   }
 ];
 
-const AgriHeroSlider = () => {
+const PeellnnovaSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Preload images on mount
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
-    }, 8000);
+    slidesData.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.bgImage;
+    });
+  }, []);
 
-    return () => clearInterval(timer);
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
   }, []);
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? slidesData.length - 1 : prev - 1));
   };
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === slidesData.length - 1 ? 0 : prev + 1));
-  };
+  // Timer resets automatically whenever currentIndex changes (whether by auto-play or manual click)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 15000);
+
+    return () => clearInterval(timer);
+  }, [currentIndex, handleNext]);
 
   const currentSlide = slidesData[currentIndex];
 
@@ -125,4 +133,4 @@ const AgriHeroSlider = () => {
   );
 };
 
-export default AgriHeroSlider;
+export default PeellnnovaSlider;
