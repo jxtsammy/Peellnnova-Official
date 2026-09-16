@@ -47,7 +47,7 @@ export default function CommunitySection() {
 
             {/* Clickable Hyperlink Arrow Button with hover scale */}
             <motion.a
-              href="https://your-target-link.com"
+              href="https://chat.whatsapp.com/IGuLo14dAxN7DDfL1nQ4WG?s=cl&p=a&mlu=4&ilr=4"
               target="_blank"
               rel="noopener noreferrer"
               className="arrow-btn"

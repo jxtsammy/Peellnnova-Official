@@ -9,11 +9,10 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const socialLinks = [
-    { name: 'Facebook', icon: 'fa-brands fa-facebook-f', url: 'https://facebook.com' },
-    { name: 'Twitter', icon: 'fa-brands fa-x-twitter', url: 'https://twitter.com' },
-    { name: 'Instagram', icon: 'fa-brands fa-instagram', url: 'https://instagram.com' },
-    { name: 'YouTube', icon: 'fa-brands fa-youtube', url: 'https://youtube.com' },
-    { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', url: 'https://linkedin.com' },
+    { name: 'Facebook', icon: 'fa-brands fa-facebook-f', url: 'https://www.facebook.com/share/1D7Wiv8isu/' },
+    { name: 'Instagram', icon: 'fa-brands fa-instagram', url: 'https://www.instagram.com/peellnnova_gh?stkn=N2hvaXB5aHM1a2t1' },
+    { name: 'Tiktok', icon: 'fa-brands fa-tiktok', url: 'https://www.tiktok.com/@peellnnova_gh?_r=1&_t=ZS-99m9QfrtRbx' },
+    { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', url: 'https://www.linkedin.com/company/peellnnova-limited-company/' },
   ];
 
   useEffect(() => {

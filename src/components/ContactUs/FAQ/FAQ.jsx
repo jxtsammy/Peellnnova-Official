@@ -4,24 +4,28 @@ import './FAQ.css';
 
 const faqs = [
   {
-    question: "What services do you offer?",
-    answer: "We provide content creation, branding, UI/UX design, and development solutions. For details, visit our Services page."
+    question: "What is Peellnnova?",
+    answer: "Peellnnova Limited Company is a Ghanaian green manufacturing company that transforms agricultural waste, particularly pineapple and orange peels, and natural resources into innovative, affordable, and sustainable household and personal-care solutions."
   },
   {
-    question: "How can I contact your team?",
-    answer: "You can reach out to us anytime via email or book a free call using the button on the left for further assistance."
+    question: "What products does Peellnnova produce?",
+    answer: "Our portfolio includes Night Angel mosquito coils and insect-repellent spray, insect-repellent creams, Pure Glow body soaps, Neat laundry soaps, and liquid, solid, and gel air fresheners."
   },
   {
-    question: "What payment methods do you accept?",
-    answer: "We accept major credit cards, bank transfers, and secure online payment gateways tailored to your project requirements."
+    question: "What makes Peellnnova different?",
+    answer: "We combine natural resources, agricultural waste, formulation science, and sustainable manufacturing to create affordable products that address everyday health, personal-care, and household needs."
   },
   {
-    question: "What is your return policy?",
-    answer: "Due to the custom nature of our digital and creative services, refunds are evaluated on a case-by-case basis depending on project milestones."
+    question: "Why do you use pineapple and orange peels?",
+    answer: "We see agricultural waste as a valuable resource rather than something that should simply be discarded. We explore ways of converting suitable agricultural by-products into useful raw materials for sustainable products."
   },
   {
-    question: "What if I have an issue with my product/service?",
-    answer: "Our support team is always ready to assist you. Simply contact us and we will resolve any issues as quickly as possible."
+    question: "Are Peellnnova products safe?",
+    answer: "Our products are developed with careful ingredient selection, formulation, testing, and stability considerations. Product-specific safety claims are based on the appropriate testing and regulatory requirements for each product."
+  },
+  {
+    question: "Can I become a Peellnnova distributor or retailer?",
+    answer: "Yes. We welcome suitable retailers, distributors, pharmacies, supermarkets, hotels, institutions, and other businesses interested in working with us."
   }
 ];
 

@@ -1,0 +1,85 @@
+.quotes-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.quotes-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 80px 80px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.quotes-container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.quote-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote-pill-tag {
+  display: inline-block;
+  background-color: #52ff88;
+  color: #111111;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+  letter-spacing: -0.2px;
+}
+
+.quote-text {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 500;
+  color: #111111;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.quote-dots {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+}
+
+.quote-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quote-dot.active {
+  background-color: #111111;
+  transform: scale(1.2);
+}

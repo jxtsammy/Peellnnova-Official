@@ -20,6 +20,8 @@ import ValueProposition from './components/AboutUs/ValueProposition/ValueProposi
 import OurTeam from './components/AboutUs/OurTeam/OurTeam'
 import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/ProcessAndStandards'
 import OurMission from './components/AboutUs/Mission/Mission'
+import Quotes from './components/AboutUs/Quotes/Quotes'
+import Partners from './components/AboutUs/Partners/Partners'
 
 //Impact Page
 import ImpactHeader from './components/Impact/ImpactHeader/ImpactHeader'
@@ -81,6 +83,8 @@ function App() {
               <ValueProposition />
               <ProcessAndStandards />
               <OurTeam />
+              <Partners />
+              <Quotes />
             </main>
           }
         />

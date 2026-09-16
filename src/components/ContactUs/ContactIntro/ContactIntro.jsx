@@ -53,7 +53,7 @@ export default function ContactSection() {
               <div>
                 <h4>Chat to us</h4>
                 <p>Our friendly team is here to help.</p>
-                <a href="mailto:hi@peellnnova.com">hi@peellnnova.com</a>
+                <a href="mailto:hi@peellnnova.com">peellnnova25@gmail.com</a>
               </div>
             </div>
 
@@ -64,7 +64,7 @@ export default function ContactSection() {
               <div>
                 <h4>Visit us</h4>
                 <p>Come say hello at our office HQ.</p>
-                <span>Kumasi<br />Ashanti Region, Ghana</span>
+                <span>Kotei<br />Kumasi, Ghana</span>
               </div>
             </div>
 
@@ -75,7 +75,8 @@ export default function ContactSection() {
               <div>
                 <h4>Call us</h4>
                 <p>Mon-Fri from 8am to 5pm.</p>
-                <a href="tel:+15550000000">+1 (555) 000-0000</a>
+                <a href="tel:+23540218224">+233 (0) 540 218 224</a><br />
+                <a href="tel:+233594916406">+233 (0) 594 916 406</a>
               </div>
             </div>
           </div>
