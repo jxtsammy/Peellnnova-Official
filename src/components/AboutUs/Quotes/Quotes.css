@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #a3e635;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -43,7 +43,7 @@
 
 .quote-pill-tag {
   display: inline-block;
-  background-color: #52ff88;
+  background-color: #ffffff;
   color: #111111;
   padding: 8px 20px;
   border-radius: 30px;

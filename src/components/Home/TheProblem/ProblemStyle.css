@@ -2,8 +2,8 @@
 
 .problem-section {
   width: 100%;
-  padding: 100px 20px;
-  background-color: #f6f6f2;
+  padding: 100px 40px;
+  background-color: #ffffff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   box-sizing: border-box;
 }
@@ -96,7 +96,7 @@
 
 /* Card 1: Light / White */
 .problem-card-light {
-  background-color: #ffffff;
+  background-color: #e4e2e2;
   color: #111111;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }

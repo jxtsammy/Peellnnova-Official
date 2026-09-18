@@ -22,6 +22,7 @@ import ProcessAndStandards from './components/AboutUs/ProcessAndStandards/Proces
 import OurMission from './components/AboutUs/Mission/Mission'
 import Quotes from './components/AboutUs/Quotes/Quotes'
 import Partners from './components/AboutUs/Partners/Partners'
+import Testimonials from './components/AboutUs/Testimonials/Testimonials'
 
 //Impact Page
 import ImpactHeader from './components/Impact/ImpactHeader/ImpactHeader'
@@ -31,6 +32,7 @@ import ImpactMetrics from './components/Impact/ImpactMetrics/ImpactMetrics'
 
 //Products Page
 import ProductHeader from './components/OurProducts/ProductsHeader/ProductHeader'
+import ProductExtras from './components/OurProducts/ProductExtras/ProductExtras'
 import ProductsInfo from './components/OurProducts/ProductsInfo/ProductsInfo'
 import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSummary'
 
@@ -85,6 +87,7 @@ function App() {
               <OurTeam />
               <Partners />
               <Quotes />
+              <Testimonials />
             </main>
           }
         />
@@ -109,6 +112,7 @@ function App() {
         element={
             <main>
               <ProductHeader />
+              <ProductExtras />
               <ProductsInfo />
               <ProductsSummary />
             </main>

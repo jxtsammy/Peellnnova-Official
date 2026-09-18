@@ -12,6 +12,8 @@ import Beautex from '../../../assets/partnerLogos/Beatex.png';
 import AGEA from '../../../assets/partnerLogos/agea.png';
 import ClimateLaunchpad from '../../../assets/partnerLogos/climateLaunchpad.png';
 import UNU from '../../../assets/partnerLogos/unuFlores.png';
+import GhanaPresidency from '../../../assets/partnerLogos/ghanaPresidency.png';
+import ECOWAS from '../../../assets/partnerLogos/ecowas.png';
 
 const partnersData = [
   {
@@ -66,7 +68,7 @@ const partnersData = [
     name: "Presidential Pitch Initiative / Office of the President",
     category: "Government & National Support",
     description: "Recognizing and backing high-impact national youth-led startup innovations.",
-    logo: "https://via.placeholder.com/120x40?text=Presidential+Pitch"
+    logo: GhanaPresidency
   },
   {
     name: "Beatex Enterprise",
@@ -84,7 +86,7 @@ const partnersData = [
     name: "ECOWAS Startup Awards",
     category: "Regional Recognition",
     description: "Honoring top innovative startups driving economic and sustainable growth in West Africa.",
-    logo: "https://via.placeholder.com/120x40?text=ECOWAS+Awards"
+    logo: ECOWAS
   },
   {
     name: "ClimateLaunchpad",

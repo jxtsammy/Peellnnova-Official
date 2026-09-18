@@ -1,12 +1,13 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './ProductsInfo.css';
-import MosquitoCoil from '../../../assets/IMG_20250930_090503_778.jpg'
-import MosquitoSpray from '../../../assets/IMG_20260722_211224_590.png'
+
+import MosquitoCoil from '../../../assets/IMG_20250930_090503_778.jpg';
+import MosquitoSpray from '../../../assets/IMG_20260722_211224_590.png';
 
 const productsData = [
   {
-    id: '01.',
+    id: '01',
     tag: 'Product by Night Angel',
     category: 'Mosquito Coil',
     name: 'Night Angel Mosquito Coils',
@@ -19,7 +20,7 @@ const productsData = [
     image: MosquitoCoil
   },
   {
-    id: '02.',
+    id: '02',
     tag: 'Product by Night Angel',
     category: 'Insect Repellent Spray',
     name: 'Night Angel Insect Repellent Spray',
@@ -32,7 +33,7 @@ const productsData = [
     image: MosquitoSpray
   },
   {
-    id: '03.',
+    id: '03',
     tag: 'Product by Night Angel',
     category: 'Insect Repellent Cream',
     name: 'Night Angel Insect Repellent Cream',
@@ -45,7 +46,7 @@ const productsData = [
     image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: '04.',
+    id: '04',
     tag: 'Product by PureGlow',
     category: 'Body Soap',
     name: 'PureGlow Body Soap',
@@ -58,7 +59,7 @@ const productsData = [
     image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: '05.',
+    id: '05',
     tag: 'Product by Neat',
     category: 'Laundry Care',
     name: 'Neat Laundry Soap',
@@ -71,7 +72,7 @@ const productsData = [
     image: 'https://images.unsplash.com/photo-1608248597266-c89050df2c1c?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: '06.',
+    id: '06',
     tag: 'Product by AiraBloom',
     category: 'Liquid Air Freshener',
     name: 'AiraBloom Liquid Air Freshener',
@@ -84,7 +85,7 @@ const productsData = [
     image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: '07.',
+    id: '07',
     tag: 'Product by AiraBloom',
     category: 'Solid Air Freshener',
     name: 'AiraBloom Solid Air Freshener',
@@ -97,7 +98,7 @@ const productsData = [
     image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=800&q=80',
   },
   {
-    id: '08.',
+    id: '08',
     tag: 'Product by AiraBloom',
     category: 'Gel Air Freshener',
     name: 'AiraBloom Gel Air Freshener',
@@ -111,190 +112,165 @@ const productsData = [
   }
 ];
 
-const filledSquareCells = [
-  { top: '80px', left: '160px' },
-  { top: '240px', right: '240px' },
-  { top: '400px', left: '80px' },
-  { top: '560px', right: '400px' }
-];
+const ProductsSection = () => {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const sliderRef = useRef(null);
 
-const ProductSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [cardWidth, setCardWidth] = useState(0);
-  const cardRef = useRef(null);
+  // Triple array to allow smooth, infinite looping in both directions
+  const duplicatedProducts = [...productsData, ...productsData, ...productsData];
 
+  // Instantly jump back to the center block if user scrolls into the outer cloned boundaries
+  const handleScroll = () => {
+    if (!sliderRef.current) return;
+    const container = sliderRef.current;
+    const singleSetWidth = container.scrollWidth / 3;
+
+    if (container.scrollLeft <= 50) {
+      container.scrollLeft += singleSetWidth;
+    } else if (container.scrollLeft >= singleSetWidth * 2 - 50) {
+      container.scrollLeft -= singleSetWidth;
+    }
+  };
+
+  // Center the scroll position on initial load
   useEffect(() => {
-    const updateWidth = () => {
-      if (cardRef.current) {
-        const width = cardRef.current.offsetWidth;
-        const gap = 24;
-        setCardWidth(width + gap);
-      }
-    };
-
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
+    if (sliderRef.current) {
+      const singleSetWidth = sliderRef.current.scrollWidth / 3;
+      sliderRef.current.scrollLeft = singleSetWidth;
+    }
   }, []);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % productsData.length);
+  const scrollLeft = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: -344, behavior: 'smooth' });
+    }
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + productsData.length) % productsData.length);
+  const scrollRight = () => {
+    if (sliderRef.current) {
+      sliderRef.current.scrollBy({ left: 344, behavior: 'smooth' });
+    }
   };
-
-  const product = productsData[currentIndex];
 
   return (
-    <section className="product-accordion-section" id='product-accordion-section'>
-      <div className="slanted-bg-layer" aria-hidden="true">
-        <div className="square-grid-pattern"></div>
-        {filledSquareCells.map((pos, idx) => (
-          <div key={idx} className="filled-grid-square" style={pos} />
-        ))}
+    <section className="products-section">
+      <div className="products-container">
+
+        <div className="products-header-row">
+          <motion.div
+            className="products-title-wrapper"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="products-badge">Innovation & Catalog</span>
+            <h2 className="products-main-title">Sustainable Solutions<br />From Nature’s Wastes</h2>
+          </motion.div>
+
+          <div className="products-header-right">
+            <motion.p
+              className="products-header-desc"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Explore Peellnnova’s cutting-edge lineup of eco-friendly household essentials—expertly crafted from upcycled agricultural by-products to deliver powerful, chemical-free protection and everyday freshness.
+            </motion.p>
+
+            {/* Control Arrows */}
+            <div className="products-nav-buttons">
+              <button onClick={scrollLeft} aria-label="Previous Slide">
+                <i className="fa-solid fa-arrow-left"></i>
+              </button>
+              <button onClick={scrollRight} aria-label="Next Slide">
+                <i className="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="product-accordion-container">
-        <div className="product-accordion-header">
-          <div className="product-header-left">
-            <span className="product-header-sub">Our Solutions</span>
-            <h2 className="product-header-title">Discover Our Products</h2>
-          </div>
-
-          <div className="product-nav-controls">
-            <button
-              type="button"
-              className="carousel-nav-btn"
-              onClick={handlePrev}
-              aria-label="Previous product"
+      {/* Viewport stretches edge-to-edge with no padding restrictions */}
+      <div className="products-carousel-viewport">
+        <div
+          className="products-slider-wrapper"
+          ref={sliderRef}
+          onScroll={handleScroll}
+        >
+          {duplicatedProducts.map((product, index) => (
+            <div
+              key={`${product.id}-${index}`}
+              className="product-card"
+              style={{ backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.05) 100%), url(${product.image})` }}
             >
-              <i className="fa-solid fa-arrow-left"></i>
-            </button>
-            <button
-              type="button"
-              className="carousel-nav-btn"
-              onClick={handleNext}
-              aria-label="Next product"
-            >
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-
-        {/* DESKTOP VIEWPORT (Sliding Track) */}
-        <div className="carousel-viewport desktop-only-carousel">
-          <motion.div
-            className="carousel-track"
-            animate={{ x: -currentIndex * cardWidth }}
-            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
-            {productsData.map((item, index) => (
-              <div
-                key={item.id}
-                ref={index === 0 ? cardRef : null}
-                className="custom-product-card"
-              >
-                <div className="card-media-side">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="card-media-img"
-                  />
-                </div>
-
-                <div className="card-content-side">
-                  <div className="card-grid-overlay" aria-hidden="true"></div>
-
-                  <div className="card-inner-top">
-                    <span className="pill-badge">Product by Peellnnova</span>
-                    <p className="card-main-quote">{item.description}</p>
-
-                    <div className="card-benefits-block">
-                      <span className="card-benefits-title">Key Benefits:</span>
-                      <ul className="card-benefits-list">
-                        {item.benefits.map((benefit, bIndex) => (
-                          <li key={bIndex}>
-                            <span className="benefit-dot">•</span> {benefit}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="card-inner-bottom">
-                    <div>
-                      <h3 className="card-author-name">{item.name}</h3>
-                      <span className="card-author-role">{item.category}</span>
-                    </div>
-
-                    <div className="card-accent-star" aria-hidden="true">
-                      ★
-                    </div>
-                  </div>
-                </div>
+              <div className="product-card-top">
+                <div style={{ width: '1px' }}></div>
+                <button
+                  className="product-action-btn"
+                  onClick={() => setSelectedProduct(product)}
+                  aria-label="View Product Details"
+                >
+                  <i className="fa-solid fa-arrow-up"></i>
+                </button>
               </div>
-            ))}
-          </motion.div>
-        </div>
 
-        {/* MOBILE VIEWPORT (Fade-in / Fade-out Crossfade) */}
-        <div className="fade-carousel-viewport mobile-only-carousel">
-          <AnimatePresence mode="wait">
+              <div className="product-card-info">
+                <span className="product-category-tag">{product.category}</span>
+                <h3>{product.name}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <AnimatePresence>
+        {selectedProduct && (
+          <div className="product-modal-backdrop" onClick={() => setSelectedProduct(null)}>
             <motion.div
-              key={product.id}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2, ease: "easeInOut" }}
-              className="custom-product-card"
+              className="product-modal-content"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.3 }}
             >
-              <div className="card-media-side">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="card-media-img"
-                />
+              <button className="modal-close-btn" onClick={() => setSelectedProduct(null)}>
+                <i className="fa-solid fa-xmark"></i>
+              </button>
+
+              <div className="modal-image-wrapper">
+                <img src={selectedProduct.image} alt={selectedProduct.name} />
               </div>
 
-              <div className="card-content-side">
-                <div className="card-grid-overlay" aria-hidden="true"></div>
+              <div className="modal-details-wrapper">
+                <span className="modal-tag">{selectedProduct.tag}</span>
+                <span className="modal-category">{selectedProduct.category}</span>
+                <h2>{selectedProduct.name}</h2>
+                <p className="modal-desc">{selectedProduct.description}</p>
 
-                <div className="card-inner-top">
-                  <span className="pill-badge">Product by Peellnnova</span>
-                  <p className="card-main-quote">{product.description}</p>
-
-                  <div className="card-benefits-block">
-                    <span className="card-benefits-title">Key Benefits:</span>
-                    <ul className="card-benefits-list">
-                      {product.benefits.map((benefit, bIndex) => (
-                        <li key={bIndex}>
-                          <span className="benefit-dot">•</span> {benefit}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                <div className="modal-benefits-section">
+                  <h4>Key Benefits & Highlights:</h4>
+                  <ul>
+                    {selectedProduct.benefits.map((benefit, i) => (
+                      <li key={i}>
+                        <i className="fa-solid fa-check"></i> {benefit}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
 
-                <div className="card-inner-bottom">
-                  <div>
-                    <h3 className="card-author-name">{product.name}</h3>
-                    <span className="card-author-role">{product.category}</span>
-                  </div>
-
-                  <div className="card-accent-star" aria-hidden="true">
-                    ★
-                  </div>
-                </div>
+                <button className="modal-cta-btn" onClick={() => setSelectedProduct(null)}>
+                  Close Details
+                </button>
               </div>
             </motion.div>
-          </AnimatePresence>
-        </div>
-
-      </div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
-export default ProductSection;
+export default ProductsSection;

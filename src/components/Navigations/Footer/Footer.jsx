@@ -50,6 +50,9 @@ const Footer = () => {
           top: offsetPosition,
           behavior: 'smooth'
         });
+      } else {
+        // Fallback if section ID isn't found on the page yet
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }, 350);
   };
@@ -124,10 +127,10 @@ const Footer = () => {
               <ul className="footer-nav">
                 <li>
                   <a
-                    href="/#why-exist-section"
-                    onClick={(e) => handleNavigateToSection(e, '/', 'why-exist-section')}
+                    href="/about#mission-section"
+                    onClick={(e) => handleNavigateToSection(e, '/about', 'mission-section')}
                   >
-                    Why We Exist
+                    Our Mission
                   </a>
                 </li>
                 <li>
@@ -171,7 +174,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/contact#community-section"
-                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                    onClick={(e) => handleNavigateToSection(e, '/contact', 'community-section')}
                   >
                     Join Community
                   </a>
@@ -179,7 +182,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/contact#faq"
-                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                    onClick={(e) => handleNavigateToSection(e, '/contact', 'faq')}
                   >
                     FAQ
                   </a>
@@ -187,7 +190,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/contact#contact-section"
-                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                    onClick={(e) => handleNavigateToSection(e, '/contact', 'contact-section')}
                   >
                     Contact Info
                   </a>
@@ -195,7 +198,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/contact#contact-section"
-                    onClick={(e) => handleNavigateToSection(e, '/products', 'product-accordion-section')}
+                    onClick={(e) => handleNavigateToSection(e, '/contact', 'contact-section')}
                   >
                     Send Us a Mail
                   </a>

@@ -4,7 +4,7 @@ import img from '../../../assets/smilingKids.jpg'
 
 export default function MissionSection() {
   return (
-    <section className="mission-section">
+    <section className="mission-section" id='mission-section'>
       <div className="mission-container">
 
         <motion.div
