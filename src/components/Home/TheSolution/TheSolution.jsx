@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import './TheSolution.css';
-import solutionImage from '../../../assets/smiles.jpg'; // Replace with your image asset path
 
 const TheSolution = () => {
   const steps = [
@@ -67,7 +66,7 @@ const TheSolution = () => {
         {/* Hero Image Container */}
         <motion.div className="solution-image-wrapper" variants={itemFadeUp}>
           <motion.img
-            src={solutionImage}
+            src="https://images.pexels.com/photos/7427929/pexels-photo-7427929.jpeg"
             alt="Peellnnova sustainable manufacturing process"
             className="solution-image"
             whileHover={{ scale: 1.02 }}

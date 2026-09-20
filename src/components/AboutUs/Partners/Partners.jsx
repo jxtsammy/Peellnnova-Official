@@ -178,7 +178,7 @@ const PartnersSection = () => {
             className="partners-toggle-btn"
             onClick={() => setShowAll(!showAll)}
           >
-            <span>{showAll ? 'Show Less Partners' : 'Show All Partners'}</span>
+            <span>{showAll ? 'Show Less' : 'Show All'}</span>
             <i className={`fa-solid fa-chevron-down ${showAll ? 'rotate' : ''}`}></i>
           </button>
         </div>

@@ -33,6 +33,7 @@ import ImpactMetrics from './components/Impact/ImpactMetrics/ImpactMetrics'
 //Products Page
 import ProductHeader from './components/OurProducts/ProductsHeader/ProductHeader'
 import ProductExtras from './components/OurProducts/ProductExtras/ProductExtras'
+import ProductsFAQ from './components/OurProducts/ProductsFAQ/ProductsFAQ'
 import ProductsInfo from './components/OurProducts/ProductsInfo/ProductsInfo'
 import ProductsSummary from './components/OurProducts/ProductsSummary/ProductsSummary'
 
@@ -114,6 +115,7 @@ function App() {
               <ProductHeader />
               <ProductExtras />
               <ProductsInfo />
+              <ProductsFAQ />
               <ProductsSummary />
             </main>
           }

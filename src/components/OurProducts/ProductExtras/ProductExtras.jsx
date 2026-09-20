@@ -47,8 +47,6 @@ const ProductExtras = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <span className="extras-badge">• About Peellnnova</span>
-
           <div className="extras-stats-row">
             <div className="stat-item">
               <h3><Counter target={10} suffix="+" /></h3>

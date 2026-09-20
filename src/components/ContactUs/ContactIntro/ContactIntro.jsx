@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import './ContactIntro.css';
 
-export default function ContactSection() {
+export default function ContactSection({ onSuccess }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,6 +17,8 @@ export default function ContactSection() {
     }
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleCheckboxChange = (serviceKey) => {
     setFormData(prev => ({
       ...prev,
@@ -28,15 +31,52 @@ export default function ContactSection() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you! Your message has been sent to Peellnnova.');
+    setLoading(true);
+
+    const selectedCategories = Object.entries(formData.services)
+      .filter(([, isChecked]) => isChecked)
+      .map(([key]) => key.charAt(0).toUpperCase() + key.slice(1))
+      .join(', ');
+
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      message: formData.message,
+      category: selectedCategories || 'Enquiry'
+    };
+
+    const SERVICE_ID = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+      .then(() => {
+        setLoading(false);
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+          services: {
+            enquiry: true,
+            partnership: false,
+            feedBack: false,
+            contentCreation: false,
+            other: false,
+          }
+        });
+        if (onSuccess) onSuccess();
+      })
+      .catch((err) => {
+        console.error('FAILED...', err);
+        setLoading(false);
+        alert('Failed to send message. Please try again.');
+      });
   };
 
   return (
     <section id="contact-section" className="contact-section">
       <div className="contact-container">
 
-        {/* Left Column: Info & Socials */}
         <div className="contact-left-col">
           <div className="form-header">
             <h2>Got ideas? Our doors are open. Let’s team up.</h2>
@@ -53,7 +93,7 @@ export default function ContactSection() {
               <div>
                 <h4>Chat to us</h4>
                 <p>Our friendly team is here to help.</p>
-                <a href="mailto:hi@peellnnova.com">peellnnova25@gmail.com</a>
+                <a href="mailto:peellnnova25@gmail.com">peellnnova25@gmail.com</a>
               </div>
             </div>
 
@@ -75,14 +115,13 @@ export default function ContactSection() {
               <div>
                 <h4>Call us</h4>
                 <p>Mon-Fri from 8am to 5pm.</p>
-                <a href="tel:+23540218224">+233 (0) 540 218 224</a><br />
+                <a href="tel:+233540218224">+233 (0) 540 218 224</a><br />
                 <a href="tel:+233594916406">+233 (0) 594 916 406</a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Right Column: Neon Green Form Card */}
         <motion.div
           className="contact-right-card"
           initial={{ opacity: 0, y: 20 }}
@@ -90,7 +129,6 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="form-group">
               <input
@@ -160,8 +198,9 @@ export default function ContactSection() {
               className="submit-btn"
               whileHover={{ scale: 1.01 }}
               whileTap={{ scale: 0.98 }}
+              disabled={loading}
             >
-              Send Message
+              {loading ? 'Sending...' : 'Send Message'}
             </motion.button>
           </form>
         </motion.div>

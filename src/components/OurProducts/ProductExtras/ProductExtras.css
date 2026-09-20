@@ -12,50 +12,37 @@
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 50px;
   display: grid;
   grid-template-columns: 1fr 1.3fr; /* Matches the exact proportion of the reference image */
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
   box-sizing: border-box;
   position: relative;
+  justify-content: start;
   z-index: 2;
 }
 
 .extras-left-col {
   display: flex;
   flex-direction: column;
-  gap: 40px;
 }
-
-.extras-badge {
-  display: inline-block;
-  background-color: #f3f4f6;
-  color: #333333;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  width: fit-content;
-  border: 1px solid #e5e7eb;
-}
-
 .extras-stats-row {
   display: flex;
   gap: 60px;
 }
 
 .stat-item h3 {
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-size: clamp(2.2rem, 5.5vw, 5rem);
   font-weight: 600;
-  color: #007a3f;
+  color: #0b3d26;
   line-height: 1;
   margin: 0 0 8px 0;
   letter-spacing: -1px;
 }
 
 .stat-item p {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   color: #71717a;
   margin: 0;
   font-weight: 400;
@@ -70,7 +57,7 @@
 .extras-main-text {
   font-size: clamp(1.1rem, 2.6vw, 4.35rem);
   color: #18181b;
-  line-height: 1.55;
+  line-height: 1.3;
   margin: 0;
   font-weight: 600;
 }

@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import './ExistStyle.css';
 import bgImage from '../../../assets/orangeFarm.jpg';
-import farmer from '../../../assets/farmer.jpg';
 
 const MotionLink = motion(Link);
 
@@ -60,7 +59,7 @@ const WhyWeExist = () => {
     e.preventDefault();
     navigate('/about');
     setTimeout(() => {
-      const element = document.getElementById('team-section');
+      const element = document.getElementById('our-team-section');
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -94,7 +93,7 @@ const WhyWeExist = () => {
 
           <div className="card-image-wrapper">
             <motion.img
-              src={farmer}
+              src="https://images.pexels.com/photos/18468255/pexels-photo-18468255.jpeg"
               alt="Farmer working in field"
               className="card-image"
               whileHover={{ scale: 1.05 }}
@@ -146,7 +145,7 @@ const WhyWeExist = () => {
             </MotionLink>
 
             <motion.a
-              href="/about#team-section"
+              href="/about#our-team-section"
               className="link-team"
               onClick={handleTeamClick}
               whileHover={{ x: 4 }}
