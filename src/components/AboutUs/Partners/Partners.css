@@ -223,6 +223,10 @@
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
+  .partners-section {
+    padding: 20px;
+  }
+
   .partners-grid {
     grid-template-columns: repeat(2, 1fr);
   }

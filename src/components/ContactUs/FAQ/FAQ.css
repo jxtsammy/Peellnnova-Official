@@ -137,6 +137,9 @@
 
 /* Responsive Design */
 @media (max-width: 900px) {
+  .faq-section{
+    padding: 20px;
+  }
   .faq-container {
     flex-direction: column;
     gap: 50px;

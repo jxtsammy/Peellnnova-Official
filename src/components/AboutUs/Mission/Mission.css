@@ -114,15 +114,17 @@
 
 .mission-giant-bg-text {
   position: absolute;
-  bottom: -60px;
-  left: 35%;
+  bottom: -20px;
+  left: 45%;
   transform: translateX(-50%);
-  font-size: clamp(90px, 20vw, 240px);
+  font-size: clamp(90px, 28vw, 240px);
   font-weight: 900;
   color: #b3e600;
   line-height: 1;
   text-transform: lowercase;
   white-space: nowrap;
   user-select: none;
+  overflow: hidden;
   pointer-events: none;
+  width: 120%;
 }

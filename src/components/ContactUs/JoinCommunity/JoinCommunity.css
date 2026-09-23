@@ -142,4 +142,8 @@
   .join-badge{
     padding: 15px 80px;
   }
+
+  .community-card-right{
+    display: none;
+  }
 }
