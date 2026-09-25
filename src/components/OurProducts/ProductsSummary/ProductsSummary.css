@@ -104,7 +104,7 @@
 
 @media (max-width: 1024px) {
   .product-summary-section {
-    padding: 80px 40px;
+    padding: 20px;
   }
 
   .product-summary-container {
@@ -118,6 +118,9 @@
 
   .summary-features-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .summary-media-side{
+    display: none;
   }
 }
 
