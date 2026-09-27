@@ -23,7 +23,6 @@
   .mission-container {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 20px;
   }
 }
 
@@ -45,6 +44,10 @@
 }
 
 @media (max-width: 768px) {
+  .mission-section{
+    padding: 20px;
+  }
+
   .mission-main-title {
     font-size: 32px;
   }
