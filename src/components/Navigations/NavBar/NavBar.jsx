@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import './NavBar.css';
 
-// Import your light and dark logo images from assets
 import logoDark from '../../../assets/Peellnnova logo.png';
 import logoLight from '../../../assets/PeellnnovaLogoWhite.png';
 
@@ -14,19 +13,37 @@ const Navbar = () => {
   const lastScrollY = useRef(0);
   const location = useLocation();
 
-  // Scroll detection for background change and hide/show on scroll direction
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'About Us', path: '/about' },
+    { name: 'Our Products', path: '/products' },
+    { name: 'Impact', path: '/impact' },
+    { name: 'Blog', path: '/blog' },
+    { name: 'Contact Us', path: '/contact' }
+  ];
+
+  useEffect(() => {
+    const currentRoute = navLinks.find((link) => link.path === location.pathname);
+
+    if (location.pathname === '/') {
+      document.title = 'Peellnnova Limited Company';
+    } else if (currentRoute) {
+      document.title = `${currentRoute.name} - Peellnnova Limited Company`;
+    } else {
+      document.title = 'Peellnnova Limited Company';
+    }
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Background threshold
       if (currentScrollY > 40) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
 
-      // Hide on scroll down, show on scroll up (with a small buffer)
       if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
         setIsVisible(false);
       } else {
@@ -49,13 +66,7 @@ const Navbar = () => {
     if (isMobileMenuOpen) setIsMobileMenuOpen(false);
   };
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Our Products', path: '/products' },
-    { name: 'Impact', path: '/impact' },
-    { name: 'Blog', path: '/blog' }
-  ];
+  const desktopLinks = navLinks.filter(link => link.path !== '/contact');
 
   return (
     <motion.header
@@ -65,7 +76,6 @@ const Navbar = () => {
       transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <nav className="navbar">
-        {/* Brand Logo with Cross-Fade Transition */}
         <Link to="/" className="navbar-logo" onClick={handleNavClick}>
           <div className="logo-img-wrapper">
             <AnimatePresence mode="wait">
@@ -96,9 +106,8 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
         <ul className="nav-links desktop-only">
-          {navLinks.map((link) => (
+          {desktopLinks.map((link) => (
             <li key={link.path}>
               <Link
                 to={link.path}
@@ -111,9 +120,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Action Items */}
         <div className="navbar-actions">
-
           <Link to="/contact" className="account-btn desktop-only" onClick={handleNavClick}>
             Contact Us
           </Link>
@@ -128,7 +135,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Mobile Drawer Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
