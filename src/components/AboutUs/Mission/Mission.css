@@ -1,7 +1,7 @@
 .mission-section {
   width: 100%;
   background-color: #ffffff;
-  padding: 70px 40px 20px 40px;
+  padding: 60px 40px 40px 40px;
   font-family: 'Poppins', sans-serif;
   color: #111111;
   position: relative;
@@ -36,7 +36,7 @@
 }
 
 .mission-main-title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
   font-weight: 900;
   line-height: 1.15;
   color: #000000;
@@ -115,7 +115,7 @@
 
 .mission-giant-bg-text {
   position: absolute;
-  bottom: -20px;
+  bottom: -40px;
   left: 45%;
   transform: translateX(-50%);
   font-size: clamp(90px, 28vw, 240px);
@@ -127,5 +127,5 @@
   user-select: none;
   overflow: hidden;
   pointer-events: none;
-  width: 120%;
+  width: 100%;
 }

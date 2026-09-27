@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
           {/* Left Image Card */}
           <div className="why-image-card">
             <img
-              src="https://images.pexels.com/photos/33993456/pexels-photo-33993456.jpeg"
+              src="https://images.pexels.com/photos/38336650/pexels-photo-38336650.jpeg"
               alt="Peellnnova Innovation"
               className="why-hero-img"
             />

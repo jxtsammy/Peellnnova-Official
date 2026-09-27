@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './OurTeam.css';
+import COO from '../../../assets/companyExecutives/COO.jpg'
+import uxOfficer from '../../../assets/companyExecutives/uxOfficer.jpg'
+import leadResearch from '../../../assets/companyExecutives/leadResearch.jpg'
+import CEO from '../../../assets/companyExecutives/CEO.png'
 
 const teamMembers = [
   {
@@ -9,7 +13,7 @@ const teamMembers = [
     lastName: "Yaw Sonny",
     role: "Co-Founder & CEO",
     bio: "Passionate herbal medicine innovator leading Peellnnova's vision, formulation research, and commercialization of sustainable community solutions.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    image: CEO,
     linkedin: "https://www.linkedin.com/in/gilbert-sonny-431450300?",
     email: "gilbertosonnybrown2001@gmail.com"
   },
@@ -19,7 +23,7 @@ const teamMembers = [
     lastName: "Hamidu Dauda",
     role: "Co-Founder & COO",
     bio: "Strategic operations professional driving business coordination, growth strategies, and impactful community partnerships.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
+    image: COO,
     linkedin: "https://www.linkedin.com/in/nafisah-dauda-17536323a",
     email: "nafisahdauda99@gmail.com"
   },
@@ -29,7 +33,7 @@ const teamMembers = [
     lastName: "Siekaah",
     role: "Co-Founder & UX Officer",
     bio: "Development planning innovator focused on user-centered product research, community engagement, and sustainable agricultural waste solutions.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80",
+    image: uxOfficer,
     linkedin: "https://www.linkedin.com/in/enoch-siekaah-47aa26221",
     email: "esiekaah@gmail.com"
   },
@@ -39,7 +43,7 @@ const teamMembers = [
     lastName: "Naame",
     role: "Lead Research Scientist",
     bio: "Manages HR, financial systems, and organizational planning to ensure operational efficiency and accountability during growth.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80",
+    image: leadResearch,
     linkedin: "https://www.linkedin.com/in/benedette-naame-658150172",
     email: "benedettewnaame@gmail.com"
   }

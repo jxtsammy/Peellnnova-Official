@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import './ProductsSummary.css';
-import img from '../../../assets/look.jpg'
 
 const ProductSummary = () => {
   return (
@@ -15,8 +14,8 @@ const ProductSummary = () => {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
           <img
-            src={img}
-            alt="Eco-friendly product showcase"
+            src="https://images.pexels.com/photos/33993456/pexels-photo-33993456.jpeg"
+            alt="African man smiling"
             className="summary-media-img"
           />
         </motion.div>

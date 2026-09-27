@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import './Mission.css';
-import img from '../../../assets/smilingKids.jpg'
 
 export default function MissionSection() {
   return (
@@ -15,19 +14,12 @@ export default function MissionSection() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mission-main-title">
-            Driving impact through sustainable innovation.
+          Transforming Waste into Sustainable Value
           </h2>
 
           <p className="mission-description">
             Peellnnova's mission is rooted in action: turning agricultural challenges into valuable opportunities by empowering local communities, reducing environmental waste, and delivering sustainable, high-quality alternatives that champion a circular economy in Africa and beyond.
           </p>
-
-          <div className="mission-quote-box">
-            <div className="quote-line"></div>
-            <p className="mission-quote">
-              "The future we're building starts with the resources already around us."
-            </p>
-          </div>
         </motion.div>
 
         <motion.div
@@ -39,7 +31,7 @@ export default function MissionSection() {
         >
           <div className="mission-img-wrapper">
             <img
-              src={img}
+              src="https://images.pexels.com/photos/38336650/pexels-photo-38336650.jpeg"
               alt="Community impact"
               className="mission-img"
             />
