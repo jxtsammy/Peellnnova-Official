@@ -74,7 +74,7 @@
 .company-info-watermark {
   position: absolute;
   right: -10px;
-  bottom: -10px;
+  bottom: 0px;
   font-size: clamp(8rem, 22vw, 24rem);
   font-weight: 900;
   color: #b3e600; /* Lime green */

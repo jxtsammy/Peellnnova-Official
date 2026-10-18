@@ -72,7 +72,9 @@ const Footer = () => {
                 />
               </div>
               <p className="brand-desc">
-                The order path to creation elements for world sites and apps user experience.
+                We transform agricultural resources into innovative products
+                designed to improve everyday living, create economic opportunities
+                and contribute to a healthier planet.
               </p>
               <div className="footer-social-icons">
                 {socialLinks.map((social, index) => (
@@ -136,7 +138,7 @@ const Footer = () => {
                 <li>
                   <a
                     href="/impact#our-vision-section"
-                    onClick={(e) => handleNavigateToSection(e, '/impact', 'our-vision-section')}
+                    onClick={(e) => handleNavigateToSection(e, '/impact', 'vision-section')}
                   >
                     Vision
                   </a>

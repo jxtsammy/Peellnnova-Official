@@ -117,6 +117,7 @@ function App() {
               <ProductsInfo />
               <ProductsFAQ />
               <ProductsSummary />
+              <NewsletterSub />
             </main>
           }
         />

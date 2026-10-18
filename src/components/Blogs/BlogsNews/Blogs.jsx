@@ -160,7 +160,7 @@ const BlogSection = () => {
                     <p>{post.description}</p>
                     <div className="blog-footer-meta small-meta">
                       <span className="read-time"><i className="fa-regular fa-clock"></i> {post.readTime}</span>
-                      <span className="brand-author">Peellnnova</span>
+                      <span className="brand-author">{post.category}</span>
                     </div>
                   </div>
                 </div>

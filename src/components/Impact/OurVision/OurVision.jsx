@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import './OurVision.css';
-import img from '../../../assets/people.jpg';
+import img from '../../../assets/blackMen.jpg';
 
 const VisionSection = () => {
   // Animation Variants
@@ -44,7 +44,7 @@ const VisionSection = () => {
   };
 
   return (
-    <section className="vision-section" id='our-vision-section'>
+    <section className="vision-section" id='vision-section'>
       <motion.div
         className="vision-container"
         variants={containerVariants}

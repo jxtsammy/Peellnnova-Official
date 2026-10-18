@@ -15,7 +15,7 @@ const Counter = ({ target, suffix = '+' }) => {
     const incrementTime = duration / target;
 
     const timer = setInterval(() => {
-      start += 1;
+      start += 100;
       if (start > target) {
         setCount(target);
         clearInterval(timer);
@@ -49,11 +49,11 @@ const ProductExtras = () => {
         >
           <div className="extras-stats-row">
             <div className="stat-item">
-              <h3><Counter target={10} suffix="+" /></h3>
+              <h3><Counter target={2000} suffix="+" /></h3>
               <p>Units Sold</p>
             </div>
             <div className="stat-item">
-              <h3><Counter target={500} suffix="+" /></h3>
+              <h3><Counter target={15000} suffix="+" /></h3>
               <p>Lives Reached</p>
             </div>
           </div>
